@@ -40,7 +40,7 @@ export default function Home(){
 
 
   return (
-    <div className="overflow-hidden w-screen h-screen bg-black">
+    <div className="overflow-hidden w-screen h-screen">
       <div 
         className="flex transition-transform duration-700 ease-in-out h-full"
         style={{
