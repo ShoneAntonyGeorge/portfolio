@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import IntroCard from "./introcard";
+import Socials from "./socials";
 
 export default function Intro({scrolling}){
 
@@ -25,6 +26,7 @@ export default function Intro({scrolling}){
                 style={{transform:`rotate(${degree}deg)`}}
             />
             <IntroCard/>
+            <Socials/>
         </div>
     )
 } 

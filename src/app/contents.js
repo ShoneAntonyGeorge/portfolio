@@ -1,12 +1,11 @@
 
-export const welcomeHeader = <p className="font-sans text-xl font-medium">
+export const welcomeHeader = <>
     Hi, my name is Shone Antony George and I'm a Full Stack Web Developer.<br/>
-    I am passionate, dedicated and committed towards elegant and peformative coding solutions.</p>;
+    I am passionate, dedicated and committed towards elegant and peformative coding solutions.</>;
 
 
-export const welcomeHeaderExpanded = <>{welcomeHeader}<br/>
-    <p>
+export const welcomeHeaderExpanded = <>
     something moresomething moresomething moresomething moresomething more
     something moresomething moresomething moresomething moresomething more
     something moresomething moresomething moresomething moresomething more
-    something moresomething moresomething moresomething moresomething more</p></>;
+    something moresomething moresomething moresomething moresomething more</>;
