@@ -1,11 +1,10 @@
 "use client"
 
 import { useState, useEffect } from "react";
-import Intro from "./components/intro/intro";
-import Second from "./components/second/second";
+import FloatingMenu from "./components/floatingMenu";
+import { pageDatas } from "./components/pageDatas";
 
-const pages = [Intro,Second];
-const numOfPages = pages.length;
+const numOfPages = pageDatas.length;
 
 export default function Home(){
   const [page,setPage] = useState(0);
@@ -49,11 +48,15 @@ export default function Home(){
         }}
       >
 
-        {pages.map((Page,index) => (
-          <Page key={index} scrolling={scrolling}/>
-        ))}
+        {pageDatas.map((PageData,index) => 
+          {
+            const Page = PageData[1];
+            return  <Page key={index} scrolling={scrolling} page={page} />
+          }
+        )}
 
       </div>
+      <FloatingMenu {...{page,setPage,setScrolling}}/>
     </div>
   )
 }

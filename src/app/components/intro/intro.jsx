@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import IntroCard from "./introcard";
 import Socials from "./socials";
 
-export default function Intro({scrolling}){
+export default function Intro({scrolling,page}){
 
     const [degree,setDegree] = useState(0);
 
@@ -13,7 +13,7 @@ export default function Intro({scrolling}){
         if(scrolling){
             setDegree(prev => (prev%360)+90)
         }
-    },[scrolling])
+    },[scrolling,page])
     
     return(
         <div className="bg-linear-to-r to-violet-200 from-yellow-200 h-screen w-screen relative" >
