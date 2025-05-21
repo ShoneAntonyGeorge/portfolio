@@ -50,7 +50,7 @@ export default function Home(){
       >
 
         {pages.map((Page,index) => (
-          <Page key={index}/>
+          <Page key={index} scrolling={scrolling}/>
         ))}
 
       </div>

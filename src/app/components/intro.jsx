@@ -1,6 +1,18 @@
-import Image from "next/image"
+"use client";
 
-export default function Intro(){
+import Image from "next/image";
+import { useEffect, useState } from "react";
+import IntroCard from "./introcard";
+
+export default function Intro({scrolling}){
+
+    const [degree,setDegree] = useState(0);
+
+    useEffect(() => {
+        if(scrolling){
+            setDegree(prev => (prev%360)+90)
+        }
+    },[scrolling])
     
     return(
         <div className="bg-linear-to-r to-violet-200 from-yellow-200 h-screen w-screen relative" >
@@ -9,20 +21,10 @@ export default function Intro(){
                 width={600} 
                 height={600} 
                 alt="mandala" 
-                className="absolute top-0 right-0 translate-x-1/2 -translate-y-1/2"
+                className="absolute top-0 right-0 translate-x-1/2 -translate-y-1/2 transition-transform duration-700"
+                style={{transform:`rotate(${degree}deg)`}}
             />
-            <div className="absolute top-48 left-48 bg-white shadow-lg p-6 rounded">
-                <Image
-                    src="/me3.jpeg"
-                    width={150}
-                    height={150}
-                    alt="me"
-                    className="rounded-full border-4 border-red-50"
-                />
-                <p>
-                    Hi! My name is Shone Antony George and I'm a Full Stack Web Developer.
-                </p>
-            </div>
+            <IntroCard/>
         </div>
     )
 } 
