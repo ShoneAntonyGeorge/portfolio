@@ -1,5 +1,5 @@
 "use client";
-import { welcomeHeader, welcomeHeaderExpanded } from "../contents";
+import { welcomeHeader, welcomeHeaderExpanded } from "../../contents";
 import { useState } from "react";
 import Image from "next/image";
 

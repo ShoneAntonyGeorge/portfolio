@@ -1,8 +1,8 @@
 "use client"
 
 import { useState, useEffect } from "react";
-import Intro from "./components/intro";
-import Second from "./components/second";
+import Intro from "./components/intro/intro";
+import Second from "./components/second/second";
 
 const pages = [Intro,Second];
 const numOfPages = pages.length;
