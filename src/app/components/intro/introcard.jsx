@@ -8,7 +8,7 @@ export default function IntroCard(){
     const [textExpanded,setTextExpanded] = useState(false);
 
     return(
-        <div className={`absolute top-30 left-48 bg-white/60 shadow-lg p-6 rounded w-3/4`}>
+        <div className={`absolute top-28 left-48 bg-white/60 shadow-lg p-6 rounded w-3/4`}>
             <div className={textExpanded ? 'flex items-center' : ''}>
                 <Image
                     src="/me3.jpeg"

@@ -3,31 +3,34 @@
 import { useState, useEffect } from "react";
 import FloatingMenu from "./components/floatingMenu";
 import { pageDatas } from "./components/pageDatas";
-
-const numOfPages = pageDatas.length;
+import { useMediaQuery } from "react-responsive";
 
 export default function Home(){
+  const numOfPages = pageDatas.length;
   const [page,setPage] = useState(0);
   const [scrolling, setScrolling] = useState(false);
+  const isMobileView = useMediaQuery({query:'(max-width:767px)'});
 
   useEffect(() => {
-    const handleScroll = (e) => {
-      if (scrolling) return;
+    if(!isMobileView){
+      const handleScroll = (e) => {
+        if (scrolling) return;
 
-      const delta = e.deltaY || e.deltaX;
-      if (delta > 0 && page < numOfPages - 1) {
-        setPage((prev) => prev + 1);
-        setScrolling(true);
-      } else if (delta < 0 && page > 0) {
-        setPage((prev) => prev - 1);
-        setScrolling(true);
-      }
-    };
+        const delta = e.deltaY || e.deltaX;
+        if (delta > 0 && page < numOfPages - 1) {
+          setPage((prev) => prev + 1);
+          setScrolling(true);
+        } else if (delta < 0 && page > 0) {
+          setPage((prev) => prev - 1);
+          setScrolling(true);
+        }
+      };
 
-    window.addEventListener("wheel", handleScroll, { passive: false });
+      window.addEventListener("wheel", handleScroll, { passive: false }); 
 
-    return () => window.removeEventListener("wheel", handleScroll);
-  }, [page, scrolling]);
+      return () => window.removeEventListener("wheel", handleScroll);
+    }
+  }, [page, scrolling,isMobileView]);
 
   useEffect(() => {
     if (!scrolling) return;
@@ -39,12 +42,12 @@ export default function Home(){
 
 
   return (
-    <div className="overflow-hidden w-screen h-screen">
+    <div className="overflow-hidden w-screen">
       <div 
-        className="flex transition-transform duration-700 ease-in-out h-full"
+        className="flex md:flex-row flex-col md:transition-transform md:duration-700 min-h-screen md:ease-in-out w-screen"
         style={{
-          transform:`translateX(-${page * 100}vw)`,
-          width:`${numOfPages * 100}vw`
+          transform:!isMobileView ? `translateX(-${page * 100}vw)` : '0',
+          width:!isMobileView ? `${numOfPages * 100}vw` : '100vw'
         }}
       >
 
