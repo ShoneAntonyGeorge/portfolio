@@ -1,15 +1,15 @@
 "use client"
 
-import { useState, useEffect } from "react";
+import { useState, useEffect} from "react";
 import FloatingMenu from "./components/floatingMenu";
 import { pageDatas } from "./components/pageDatas";
 import { useMediaQuery } from "react-responsive";
 
 export default function Home(){
-  const numOfPages = pageDatas.length;
   const [page,setPage] = useState(0);
   const [scrolling, setScrolling] = useState(false);
   const isMobileView = useMediaQuery({query:'(max-width:767px)'});
+  const numOfPages = pageDatas.length;
   const [domLoaded,setDomLoaded] = useState(false);
   
 
@@ -43,17 +43,23 @@ export default function Home(){
     if (!scrolling) return;
     const timeout = setTimeout(() => {
       setScrolling(false);
-    }, 400); 
+    }, 800); 
     return () => clearTimeout(timeout);
   }, [scrolling]);
+
+  useEffect(() => {
+    if(isMobileView){
+      setPage(0);
+    }
+  },[isMobileView])
 
 
   return (
     <div className="overflow-hidden w-screen">
       {domLoaded && <div 
-        className="flex md:flex-row flex-col md:transition-transform md:duration-700 min-h-screen md:ease-in-out w-screen"
+        className="flex md:flex-row flex-col md:transition-transform md:duration-700 min-h-screen md:ease-in-out"
         style={{
-          transform:isMobileView ? '0' : `translateX(-${page * 100}vw)`,
+          transform:isMobileView ? 'translateX(0vw)' : `translateX(-${page * 100}vw)`,
           width:isMobileView ? '100vw' : `${numOfPages * 100}vw`
         }}
       >
