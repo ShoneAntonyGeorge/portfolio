@@ -10,6 +10,13 @@ export default function Home(){
   const [page,setPage] = useState(0);
   const [scrolling, setScrolling] = useState(false);
   const isMobileView = useMediaQuery({query:'(max-width:767px)'});
+  const [domLoaded,setDomLoaded] = useState(false);
+  
+
+  useEffect(() => {
+    //nextjs complains when server serves a dom and browser before mounting component changes it depending on useMediaQuery
+    setDomLoaded(true);
+  },[])
 
   useEffect(() => {
     if(!isMobileView){
@@ -43,11 +50,11 @@ export default function Home(){
 
   return (
     <div className="overflow-hidden w-screen">
-      <div 
+      {domLoaded && <div 
         className="flex md:flex-row flex-col md:transition-transform md:duration-700 min-h-screen md:ease-in-out w-screen"
         style={{
-          transform:!isMobileView ? `translateX(-${page * 100}vw)` : '0',
-          width:!isMobileView ? `${numOfPages * 100}vw` : '100vw'
+          transform:isMobileView ? '0' : `translateX(-${page * 100}vw)`,
+          width:isMobileView ? '100vw' : `${numOfPages * 100}vw`
         }}
       >
 
@@ -58,7 +65,7 @@ export default function Home(){
           }
         )}
 
-      </div>
+      </div>}
       <FloatingMenu {...{page,setPage,setScrolling}}/>
     </div>
   )
