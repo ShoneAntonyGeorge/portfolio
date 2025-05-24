@@ -6,10 +6,10 @@ import { useEffect, useRef, useState } from "react";
 
 function Stacks(){
 
-    const workingStacks = ["Spring Boot","NodeJs","Javascript","Typescript","Typescrip"];
-    const workingStackImages = ["/springboot.png","/node.png","/javascript.png","/typescript.png","/typescript.png"]
-    const strongStacks = ["React","NodeJs","Javascript","Typescript"];
-    const strongStackImages = ["/react.png","/node.png","/javascript.png","/typescript.png"];
+    const workingStacks = ["Spring Boot","Java","Python","Ruby","Typescrip"];
+    const workingStackImages = ["/springboot.png","/java.png","/python.png","/ruby.png","/typescript.png"]
+    const strongStacks = ["React","NodeJs","Javascript","Typescript","Remix","CSS"];
+    const strongStackImages = ["/react.png","/node.png","/javascript.png","/typescript.png","/remix.png","/css.png"];
 
     const handRef = useRef(null);
     const animated = useRef(false);
