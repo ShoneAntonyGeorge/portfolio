@@ -26,8 +26,8 @@ function Stacks(){
         const animate = () =>{
             if(!animated.current){
                 setTimeout(() => {setCardClasses(initialCardClass2);setWorkingVisible(true)},600);
+                setTimeout(() => {setLabelsVisible(true);},1700);
                 setTimeout(() => setCardClasses(initialCardClass3),1200);
-                setTimeout(() => {setLabelsVisible(true);},2050);
                 setTimeout(() => setAfterAnimationHand('-translate-y-[100%]'),1200);
                 setTimeout(() => setAfterAnimationHand('hidden -translate-y-[50%]'),1700);
                 animated.current = true;
