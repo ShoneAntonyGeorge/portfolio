@@ -6,18 +6,12 @@ import { useEffect, useRef, useState } from "react";
 
 function Stacks(){
 
-    const workingStacks = ["Spring Boot","Java","Python","Ruby","Typescrip"];
-    const workingStackImages = ["/springboot.png","/java.png","/python.png","/ruby.png","/typescript.png"]
+    const workingStacks = ["Spring Boot","Java","Python","Ruby","Angular","Rails","Docker","PostgreSQL","Bootstrap","NextJs","Tailwind CSS"];
     const strongStacks = ["React","NodeJs","Javascript","Typescript","Remix","CSS"];
-    const strongStackImages = ["/react.png","/node.png","/javascript.png","/typescript.png","/remix.png","/css.png"];
 
     const handRef = useRef(null);
     const animated = useRef(false);
     const [workingVisible,setWorkingVisible] = useState(false);
-
-    const [workingIimageUrls,setWorkingImageUrls] = useState(Array(workingStacks.length).fill("/card.png"));
-    const [strongImageUrls,setStrongImageUrls] = useState(Array(strongStacks.length).fill("/card.png"));
-
     const [labelsVisible,setLabelsVisible] = useState(false);
 
     const initialCardClass1 = "absolute -translate-y-[100%] scale-50";
@@ -33,9 +27,9 @@ function Stacks(){
             if(!animated.current){
                 setTimeout(() => {setCardClasses(initialCardClass2);setWorkingVisible(true)},600);
                 setTimeout(() => setCardClasses(initialCardClass3),1200);
-                setTimeout(() => {setWorkingImageUrls(workingStackImages);setLabelsVisible(true);setStrongImageUrls(strongStackImages)},2050);
-                setTimeout(() => setAfterAnimationHand('-translate-y-[100%]'),1000);
-                setTimeout(() => setAfterAnimationHand('hidden -translate-y-[50%]'),1500);
+                setTimeout(() => {setLabelsVisible(true);},2050);
+                setTimeout(() => setAfterAnimationHand('-translate-y-[100%]'),1200);
+                setTimeout(() => setAfterAnimationHand('hidden -translate-y-[50%]'),1700);
                 animated.current = true;
             }
         }
@@ -74,12 +68,12 @@ function Stacks(){
             <div className="relative flex flex-col items-center w-screen  top-2/8 -translate-y-1/2">
                 <span className="mb-10 text-2xl">{labelsVisible && "STRONG EXPERIENCE IN"} </span>
                 <div className="gap-10 top-10 flex absolute w-screen flex-wrap justify-center">
-                    {strongStacks.map((stack,index) => 
+                    {strongStacks.map(stack => 
                         <div key={stack} className={cardClasses+" flex items-center flex-col transition-transform duration-600 ease-in-out"}>
                             <div className={" flex justify-center items-center  rounded-md border-6  border-gray-100 bg-gray-50 h-[132px] w-[90px]"}>
                                 <Image  
                                     alt="card" 
-                                    src={strongImageUrls[index]} 
+                                    src={labelsVisible ? `/stacks/${stack.replace(" ","").toLowerCase()}.png` : "/card.png"} 
                                     width={110} 
                                     height={110}
                                     className=""
@@ -99,7 +93,7 @@ function Stacks(){
                             <div className={` flex justify-center items-center  rounded-md border-6  border-gray-100 bg-gray-50 ${!workingVisible && "hidden"} ${labelsVisible ? 'h-[88px] w-[60px]' : 'h-[132px] w-[90px]'}`}>
                                 <Image  
                                     alt="card" 
-                                    src={workingIimageUrls[index]} 
+                                    src={labelsVisible ? `/stacks/${stack.replace(" ","").toLowerCase()}.png` : "/card.png"} 
                                     width={110} 
                                     height={110}
                                     className=""
