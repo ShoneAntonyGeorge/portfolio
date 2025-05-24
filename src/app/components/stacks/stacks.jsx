@@ -5,28 +5,37 @@ import React from "react";
 import { useEffect, useRef, useState } from "react";
 
 function Stacks(){
-    const stacks = ["React","NodeJs","Javascript","Typescript"];
-    const stackImages = ["/react.png","/node.png","/javascript.png","/typescript.png"]
+
+    const workingStacks = ["Spring Boot","NodeJs","Javascript","Typescript","Typescrip"];
+    const workingStackImages = ["/springboot.png","/node.png","/javascript.png","/typescript.png","/typescript.png"]
+    const strongStacks = ["React","NodeJs","Javascript","Typescript"];
+    const strongStackImages = ["/react.png","/node.png","/javascript.png","/typescript.png"];
+
     const handRef = useRef(null);
     const animated = useRef(false);
-    const [imageUrls,setImageUrls] = useState(Array(stacks.length).fill("/card.png"));
+    const [workingVisible,setWorkingVisible] = useState(false);
+
+    const [workingIimageUrls,setWorkingImageUrls] = useState(Array(workingStacks.length).fill("/card.png"));
+    const [strongImageUrls,setStrongImageUrls] = useState(Array(strongStacks.length).fill("/card.png"));
+
     const [labelsVisible,setLabelsVisible] = useState(false);
-    const initialCardClass1 = "absolute -translate-y-[150%] scale-50";
+
+    const initialCardClass1 = "absolute -translate-y-[100%] scale-50";
     const initialCardClass2 = "";
     const initialCardClass3 = "cardFlipClass ";
+    
     const [cardClasses,setCardClasses] = useState(initialCardClass1);
     const [afterAnimationHand,setAfterAnimationHand] = useState('');
 
     
     useEffect(() => {
         const animate = () =>{
-            // setTimeout(() => setCardClasses(initialCardClass1),100);
             if(!animated.current){
-                setTimeout(() => setCardClasses(initialCardClass2),600);
+                setTimeout(() => {setCardClasses(initialCardClass2);setWorkingVisible(true)},600);
                 setTimeout(() => setCardClasses(initialCardClass3),1200);
-                setTimeout(() => {setImageUrls(stackImages);setLabelsVisible(true)},2050);
-                setTimeout(() => setAfterAnimationHand('-translate-y-[100%]'),1200);
-                setTimeout(() => setAfterAnimationHand('hidden -translate-y-[50%]'),1700);
+                setTimeout(() => {setWorkingImageUrls(workingStackImages);setLabelsVisible(true);setStrongImageUrls(strongStackImages)},2050);
+                setTimeout(() => setAfterAnimationHand('-translate-y-[100%]'),1000);
+                setTimeout(() => setAfterAnimationHand('hidden -translate-y-[50%]'),1500);
                 animated.current = true;
             }
         }
@@ -62,26 +71,46 @@ function Stacks(){
                 className={`${afterAnimationHand} absolute top-0 left-1/2 -translate-x-1/2 rotate-180 transition-transform duration-500 ease-in-out`}
             />
 
-            <div className="flex absolute w-screen flex-wrap justify-center top-2/5 gap-10 -translate-y-1/2">
-                {stacks.map((stack,index) => 
-                    <div key={stack} className={cardClasses+" flex items-center flex-col transition-transform duration-600 ease-in-out"}>
-                        <div className={" flex justify-center items-center  rounded-md border-6  border-gray-100 bg-gray-50 h-[132px] w-[90px]"}>
-                            <Image  
-                                alt="card" 
-                                src={imageUrls[index]} 
-                                width={110} 
-                                height={110}
-                                className=""
-                            />
-                            
+            <div className="relative flex flex-col items-center w-screen  top-2/8 -translate-y-1/2">
+                <span className="mb-10 text-2xl">{labelsVisible && "STRONG EXPERIENCE IN"} </span>
+                <div className="gap-10 top-10 flex absolute w-screen flex-wrap justify-center">
+                    {strongStacks.map((stack,index) => 
+                        <div key={stack} className={cardClasses+" flex items-center flex-col transition-transform duration-600 ease-in-out"}>
+                            <div className={" flex justify-center items-center  rounded-md border-6  border-gray-100 bg-gray-50 h-[132px] w-[90px]"}>
+                                <Image  
+                                    alt="card" 
+                                    src={strongImageUrls[index]} 
+                                    width={110} 
+                                    height={110}
+                                    className=""
+                                />
+                                
+                            </div>
+                            <span className="mt-1 text-xl text-transparent bg-clip-text bg-gradient-to-l from-red-900 to-violet-900">{labelsVisible && stack}</span>
                         </div>
-                        <span className="mt-1 text-xl text-transparent bg-clip-text bg-gradient-to-l from-red-900 to-violet-900">{labelsVisible && stack}</span>
-                    </div>
-                )}
+                    )}
 
-                {/* <div  className="rounded-md border-6  border-gray-100 bg-gray-50 h-[132px] w-[90px]">
-                </div> */}
+                </div>
 
+                <span className="mb-10 absolute top-60 text-xl">{labelsVisible && "WORKING KNOWLEDGE OF"} </span>
+                <div className="gap-10 top-70 flex absolute w-screen flex-wrap justify-center">
+                    {workingStacks.map((stack,index) => 
+                        <div key={stack} className={cardClasses+" flex items-center flex-col transition-transform duration-600 ease-in-out"}>
+                            <div className={` flex justify-center items-center  rounded-md border-6  border-gray-100 bg-gray-50 ${!workingVisible && "hidden"} ${labelsVisible ? 'h-[88px] w-[60px]' : 'h-[132px] w-[90px]'}`}>
+                                <Image  
+                                    alt="card" 
+                                    src={workingIimageUrls[index]} 
+                                    width={110} 
+                                    height={110}
+                                    className=""
+                                />
+                                
+                            </div>
+                            <span className="mt-1 text-lg text-transparent bg-clip-text bg-gradient-to-l from-red-900 to-violet-900">{labelsVisible && stack}</span>
+                        </div>
+                    )}
+
+                </div>
             </div>
         </div>
     )
