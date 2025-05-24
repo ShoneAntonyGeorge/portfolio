@@ -25,11 +25,11 @@ function Stacks(){
     useEffect(() => {
         const animate = () =>{
             if(!animated.current){
-                setTimeout(() => {setCardClasses(initialCardClass2);setWorkingVisible(true)},600);
-                setTimeout(() => {setLabelsVisible(true);},1700);
-                setTimeout(() => setCardClasses(initialCardClass3),1200);
-                setTimeout(() => setAfterAnimationHand('-translate-y-[100%]'),1200);
-                setTimeout(() => setAfterAnimationHand('hidden -translate-y-[50%]'),1700);
+                setTimeout(() => {setCardClasses(initialCardClass2);setWorkingVisible(true)},1100);
+                setTimeout(() => {setLabelsVisible(true);},2100);
+                setTimeout(() => setCardClasses(initialCardClass3),1700);
+                setTimeout(() => setAfterAnimationHand('-translate-y-[100%]'),1700);
+                setTimeout(() => setAfterAnimationHand('hidden -translate-y-[50%]'),2200);
                 animated.current = true;
             }
         }
