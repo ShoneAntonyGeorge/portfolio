@@ -6,7 +6,7 @@ import { pageDatas } from "./components/pageDatas";
 import { useMediaQuery } from "react-responsive";
 
 export default function Home(){
-  const [page,setPage] = useState(1);
+  const [page,setPage] = useState(0);
   const [scrolling, setScrolling] = useState(false);
   const isMobileView = useMediaQuery({query:'(max-width:767px)'});
   const numOfPages = pageDatas.length;
