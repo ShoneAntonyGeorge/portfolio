@@ -4,6 +4,7 @@ import { useState, useEffect} from "react";
 import FloatingMenu from "./components/floatingMenu";
 import { pageDatas } from "./components/pageDatas";
 import { useMediaQuery } from "react-responsive";
+import Expanded from "./components/journey/expanded";
 
 export default function Home(){
   const [page,setPage] = useState(2);
@@ -11,6 +12,9 @@ export default function Home(){
   const isMobileView = useMediaQuery({query:'(max-width:767px)'});
   const numOfPages = pageDatas.length;
   const [domLoaded,setDomLoaded] = useState(false);
+
+
+  const [expand,setExpand] = useState('');
   
 
   useEffect(() => {
@@ -19,7 +23,7 @@ export default function Home(){
   },[])
 
   useEffect(() => {
-    if(!isMobileView){
+    if(!isMobileView && expand === ''){
       const handleScroll = (e) => {
         if (scrolling) return;
 
@@ -37,7 +41,7 @@ export default function Home(){
 
       return () => window.removeEventListener("wheel", handleScroll);
     }
-  }, [page, scrolling,isMobileView]);
+  }, [page, scrolling,isMobileView,expand]);
 
   useEffect(() => {
     if (!scrolling) return;
@@ -56,6 +60,7 @@ export default function Home(){
 
   return (
     <div className="overflow-hidden w-screen">
+      <FloatingMenu {...{page,setPage,setScrolling}} className="z-2"/>
       {domLoaded && <div 
         className="flex md:flex-row flex-col md:transition-transform md:duration-700 min-h-screen md:ease-in-out"
         style={{
@@ -67,12 +72,12 @@ export default function Home(){
         {pageDatas.map((PageData,index) => 
           {
             const Page = PageData[1];
-            return  <Page key={index} scrolling={scrolling} page={page} />
+            return  <Page key={index} scrolling={scrolling} page={page} expand={expand} setExpand={setExpand}/>
           }
         )}
 
       </div>}
-      <FloatingMenu {...{page,setPage,setScrolling}}/>
+      {expand && <Expanded setExpand={setExpand}/>}
     </div>
   )
 }

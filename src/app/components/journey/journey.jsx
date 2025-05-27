@@ -2,13 +2,13 @@ import React from "react";
 import Brief from "./brief";
 import journeyData from "./journeyData";
 
-function Journey(){
+function Journey({expand,setExpand}){
 
     return(
-        <div className="bg-red-200 w-screen h-screen flex flex-col justify-center items-center">
+        <div className="bg-red-200 relative w-screen h-screen flex flex-col justify-center items-center">
 
             {journeyData.map((journey) => 
-                <Brief key={journey.title} title={journey.title} image={journey.image}/>
+                <Brief key={journey.title} title={journey.title} image={journey.image} expand={expand===journey.title} setExpand={setExpand}/>
             )}
             
         </div>

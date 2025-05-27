@@ -2,7 +2,7 @@ import { pageDatas } from "./pageDatas"
 
 export default function FloatingMenu({page, setPage, setScrolling}){
     return(
-        <div className="w-screen absolute bottom-25 md:flex justify-center hidden ">
+        <div className="w-screen fixed bottom-25 md:flex justify-center hidden z-10">
             <div className="w-2/5 h-11 bg-white/40 rounded-b-2xl absolute top-0 shadow-xl flex justify-between px-7">
                 {pageDatas.map((PageData,index) => {
                     const label = PageData[0];

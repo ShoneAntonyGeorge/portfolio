@@ -39,11 +39,21 @@ body {
 }
 
 @keyframes journeySlideAnimation{
-  from{transform: translateY(-200%);}
-  to{transform: translateY(0%);}
+  from{transform: translateX(0);}
+  to{transform: translateX(200%);}
 }
 
 .journeySlideClass{
   animation:journeySlideAnimation;
+  animation-duration:1s;
+}
+
+@keyframes expandSlideAnimation{
+  from{transform: translateX(-200%);}
+  to{transform: translateX(0);}
+}
+
+.expandSlideClass{
+  animation:expandSlideAnimation;
   animation-duration:1s;
 }
