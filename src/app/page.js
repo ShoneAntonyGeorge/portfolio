@@ -77,7 +77,7 @@ export default function Home(){
         )}
 
       </div>}
-      {expand && <Expanded setExpand={setExpand} expand={expand}/>}
+      {expand && <Expanded setExpand={setExpand} journey={expand}/>}
     </div>
   )
 }
