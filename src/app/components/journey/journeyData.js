@@ -10,15 +10,22 @@ export default  [
         points:[
             "first thirdthirdthirdthird thirdthirdthirdthirdthirdthird thirdthirdthird",
             "second third third third thirdthirdthird third",
+            "third third thirdthird third third",
+            "third third thirdthird third third",
+            "third third thirdthird third third",
             "third third thirdthird third third"
         ]
     },
     {
         title:"Java Tutor At Sevendyne",
-        image:"sevendyne.jpg"
+        image:"sevendyne.jpg",
+        description:"aaaaa",
+        points:[]
     },
     {
         title:"Full Stack Developer At CSR-Informatik",
-        image:"csr.svg"
+        image:"csr.svg",
+        description:"aaaaa",
+        points:[]
     }
 ];
