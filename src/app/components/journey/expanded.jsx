@@ -19,15 +19,12 @@ function Expanded({setExpand,journey}){
 
                 <div className="h-full w-full lg:w-7/10 rounded-r-3xl flex flex-col p-5 lg:p-15 overflow-y-auto">
 
-                    <span className=" font-light font-sans italic lg:text-base/6 text-sm">"{journey.description}"</span>
+                    <span className=" font-light font-serif italic lg:text-base/6 text-sm">"{journey.description}"</span>
 
-                    <div className="flex  h-4/5 items-center p-5">
-                        
-                        <ul className="list-disc">
-                            {journey.points.map((point,index) => <li key={index} className="text-lg">{point}</li>)}
-                        </ul>
+                    <ul className="list-disc p-5 flex flex-col gap-4">
+                        {journey.points.map((point,index) => <li key={index} className="text-sm font-semibold lg:text-lg">{point}</li>)}
+                    </ul>
 
-                    </div>
                 </div>
             </div>
         </div>
