@@ -5,8 +5,8 @@ import React from "react";
 function Brief({journey,expand,setExpand}){
     
     return( 
-        <div className={`${expand && 'journeySlideClass'} relative w-8/10 md:w-[50%] h-[100px] bg-white/90 rounded-xl shadow-lg my-10 flex`}>
-            <div className="h-[50px] w-[50px] md:w-[130px] md:h-[130px] absolute bg-white border-2 border-gray-200 bottom-5 rounded-md shadow-lg -left-5">
+        <div className={`${expand && 'journeySlideClass'} relative w-8/10 md:w-[50%] h-[100px] bg-white rounded-xl shadow-lg my-10 flex outline-10 outline-white/50`}>
+            <div className="h-[50px] w-[50px] md:w-[130px] md:h-[130px] absolute bg-white border-3 border-[white] bottom-5 rounded-md shadow-sm shadow-[#c90098] -left-5">
                 <Image
                     src={`/${journey.image}`}
                     height={130}
@@ -17,7 +17,7 @@ function Brief({journey,expand,setExpand}){
             </div>
             <div className="pl-[50px] md:pl-[150px] w-12/13  h-full rounded-l-xl flex flex-col justify-center">
                 <div>
-                    <span className="md:text-2xl font-medium text-transparent bg-clip-text bg-gradient-to-r from-red-900 to-red-700">
+                    <span className="md:text-2xl md:font-semibold font-medium text-transparent bg-clip-text bg-gradient-to-r from-[#5a045d] to-[#c90098]">
                         {journey.title}
                     </span>
                 </div>
