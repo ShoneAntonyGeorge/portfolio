@@ -16,25 +16,46 @@ export default function Intro({scrolling,page}){
     },[scrolling,page])
     
     return(
-        <div className="bg-linear-to-r to-violet-200 from-yellow-200 h-screen w-screen relative" >
-            <Image 
-                src="/mandala3.png" 
-                width={600} 
-                height={600} 
-                alt="mandala" 
-                className="absolute min-w-[300px] min-h-[300px] w-[45vw] h-[45vw] top-0 right-0 translate-x-1/2 -translate-y-1/2 transition-transform duration-700"
-                style={{transform:`rotate(${degree}deg)`}}
-            />
-            <IntroCard/>
-            <div className="max-h-[500px] max-w-[500px] h-[40vw] w-[40vw] absolute bottom-0 left-0 translate-y-1/2 -translate-x-1/2">
-                <Image 
-                    src="/mandala3.png" 
-                    width={500} 
-                    height={500} 
-                    alt="mandala" 
-                    className="h-full w-full "
+        <div className="bg-white h-screen w-screen relative" >
+
+            <div className="absolute top-0 right-0  translate-x-1/2">
+                <Image
+                    src="/monitor.png"
+                    width={200}
+                    height={200}
+                    alt="monitor"
+                    className="absolute top-40 -left-43"
                 />
+                <Image
+                src="/holi4.png"
+                alt="holi"
+                width={800}
+                height={800}
+                className="h-screen w-auto "
+                />
+
+                {/* <div
+                    className="absolute top-0 w-full h-full bg-black/0 z-5"
+                /> */}
             </div>
+
+            <div className="w-fit max-w-2/4 ml-45 mt-25">
+                <div className="mb-5 min-w-[100px] max-h-[230px] max-w-[230px] min-h-[100px] w-[35vw] h-[35vw] rounded-full bg-[#f9bc57] flex justify-center items-center">
+                    <Image
+                        src="/me3.jpeg"
+                        width={300}
+                        height={300}
+                        alt="me"
+                        className="rounded-full w-full h-full shadow-2xl border-4 shadow-[#f9bc57]"
+                    />
+                </div>
+                <span className="text-5xl font-semibold ml-10 text-transparent bg-clip-text bg-gradient-to-r from-[#ac1115] to-[#f9bc57]">Full Stack Developer</span>
+                <br/>
+                <div className="text-xl ml-20 mt-3 font-light italic">
+                    I am Shone Antony George. blaaaah blaah blaa blaaaah blaaaah blaaaah blaaaah blaaaah blaaaah blaaaahah blaa blaaaah blaaaah blaaaah blaaaah blaaaah blaaaah blaaaahah blaa blaaaah blaaaah blaaaah blaaaah blaaaah blaaaah blaaaahah blaa blaaaah blaaaah blaaaah blaaaah blaaaah blaaaah blaaaaha blaaaah blaaaah blaaaah blaaaah blaaaah blaaaah blaaaah
+                </div>
+            </div>
+
             <Socials/>
         </div>
     )
