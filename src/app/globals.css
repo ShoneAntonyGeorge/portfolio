@@ -57,3 +57,49 @@ body {
   animation:expandSlideAnimation;
   animation-duration:1s;
 }
+
+.growGradient {
+  width: 100vw;
+  height: 100vh;
+  /* background: linear-gradient(to right bottom, #ddd6fe, #fecaca); */
+  background: linear-gradient(to right bottom, #ddd6fe00, #fecaca00);
+  background-size: 0% 0%;
+  background-repeat: no-repeat;
+  animation: expandGradient 0.3s ease-out forwards;
+}
+
+@keyframes expandGradient {
+   0% {
+    background: linear-gradient(to right bottom, #ddd6fe00, #fecaca00);
+  }
+  10% {
+    background: linear-gradient(to right bottom, #ddd6fe1A, #fecaca0A);
+  }
+  20% {
+    background: linear-gradient(to right bottom, #ddd6fe33, #fecaca14);
+  }
+  30% {
+    background: linear-gradient(to right bottom, #ddd6fe4D, #fecaca1F);
+  }
+  40% {
+    background: linear-gradient(to right bottom, #ddd6fe66, #fecaca33);
+  }
+  50% {
+    background: linear-gradient(to right bottom, #ddd6fe80, #fecaca4D);
+  }
+  60% {
+    background: linear-gradient(to right bottom, #ddd6fe99, #fecaca66);
+  }
+  70% {
+    background: linear-gradient(to right bottom, #ddd6feb3, #fecaca80);
+  }
+  80% {
+    background: linear-gradient(to right bottom, #ddd6feCC, #fecaca99);
+  }
+  90% {
+    background: linear-gradient(to right bottom, #ddd6fee6, #fecacab3);
+  }
+  100% {
+    background: linear-gradient(to right bottom, #ddd6fe, #fecaca); /* Full opacity */
+  }
+}

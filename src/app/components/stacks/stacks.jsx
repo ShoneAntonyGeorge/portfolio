@@ -21,15 +21,18 @@ function Stacks(){
     const [cardClasses,setCardClasses] = useState(initialCardClass1);
     const [afterAnimationHand,setAfterAnimationHand] = useState('');
 
+    const [growGradient,setGrowGradient] = useState('');
+
     
     useEffect(() => {
         const animate = () =>{
             if(!animated.current){
-                setTimeout(() => {setCardClasses(initialCardClass2);setWorkingVisible(true)},1100);
-                setTimeout(() => {setLabelsVisible(true);},1800);
-                setTimeout(() => setCardClasses(initialCardClass3),1700);
-                setTimeout(() => setAfterAnimationHand('-translate-y-[100%]'),1700);
-                setTimeout(() => setAfterAnimationHand('hidden -translate-y-[100%]'),2200);
+                setTimeout(() => setGrowGradient('growGradient'),1100);
+                setTimeout(() => {setCardClasses(initialCardClass2);setWorkingVisible(true)},2100);
+                setTimeout(() => {setLabelsVisible(true);},2800);
+                setTimeout(() => setCardClasses(initialCardClass3),2700);
+                setTimeout(() => setAfterAnimationHand('-translate-y-[100%]'),2700);
+                setTimeout(() => setAfterAnimationHand('hidden -translate-y-[100%]'),3200);
                 animated.current = true;
             }
         }
@@ -55,7 +58,7 @@ function Stacks(){
     },[])
 
     return(
-        <div className="overflow-y-hidden bg-linear-to-r relative from-violet-200 to-red-200 min-h-screen w-screen" >
+        <div className={`${growGradient} overflow-y-hidden relative w-screen`} >
             <Image
                 ref={handRef}
                 src="/hands.png"
