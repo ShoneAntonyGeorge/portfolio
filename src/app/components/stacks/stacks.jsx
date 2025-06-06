@@ -23,16 +23,25 @@ function Stacks(){
 
     const [growGradient,setGrowGradient] = useState('');
 
+    const delay = async(ms) => {
+        return new Promise(res => setTimeout(res,ms));
+    }
     
     useEffect(() => {
-        const animate = () =>{
+        const animate = async() =>{
             if(!animated.current){
-                setTimeout(() => setGrowGradient('growGradient'),1100);
-                setTimeout(() => {setCardClasses(initialCardClass2);setWorkingVisible(true)},2100);
-                setTimeout(() => {setLabelsVisible(true);},2800);
-                setTimeout(() => setCardClasses(initialCardClass3),2700);
-                setTimeout(() => setAfterAnimationHand('-translate-y-[100%]'),2700);
-                setTimeout(() => setAfterAnimationHand('hidden -translate-y-[100%]'),3200);
+                await delay(1100);
+                setGrowGradient('growGradient');
+                await delay(1000);
+                setCardClasses(initialCardClass2);
+                setWorkingVisible(true);
+                await delay(600);
+                setAfterAnimationHand('-translate-y-[100%]');
+                setCardClasses(initialCardClass3);
+                await delay(100);
+                setLabelsVisible(true);
+                await delay(500);
+                setAfterAnimationHand('hidden -translate-y-[100%]');
                 animated.current = true;
             }
         }
@@ -58,7 +67,7 @@ function Stacks(){
     },[])
 
     return(
-        <div className={`${growGradient} overflow-y-hidden relative w-screen`} >
+        <div className={`${growGradient} min-h-screen h-fit relative w-screen`} >
             <Image
                 ref={handRef}
                 src="/hands.png"

@@ -59,47 +59,74 @@ body {
 }
 
 .growGradient {
-  width: 100vw;
-  height: 100vh;
-  /* background: linear-gradient(to right bottom, #ddd6fe, #fecaca); */
   background: linear-gradient(to right bottom, #ddd6fe00, #fecaca00);
   background-size: 0% 0%;
   background-repeat: no-repeat;
-  animation: expandGradient 0.3s ease-out forwards;
+  animation: expandGradient 0.5s ease-out forwards;
 }
 
 @keyframes expandGradient {
-   0% {
-    background: linear-gradient(to right bottom, #ddd6fe00, #fecaca00);
+  0% {
+    background: linear-gradient(to right bottom, 
+      #f9bc5700 0%, 
+      #c9009800 0%);
   }
   10% {
-    background: linear-gradient(to right bottom, #ddd6fe1A, #fecaca0A);
+    background: linear-gradient(to right bottom, 
+      #f9bc571A 5%, 
+      #c900980A 10%);
   }
   20% {
-    background: linear-gradient(to right bottom, #ddd6fe33, #fecaca14);
+    background: linear-gradient(to right bottom, 
+      #f9bc5733 10%, 
+      #c9009814 20%);
   }
   30% {
-    background: linear-gradient(to right bottom, #ddd6fe4D, #fecaca1F);
+    background: linear-gradient(to right bottom, 
+      #f9bc574D 15%, 
+      #f9bc574D 25%, 
+      #c900981F 35%);
   }
   40% {
-    background: linear-gradient(to right bottom, #ddd6fe66, #fecaca33);
+    background: linear-gradient(to right bottom, 
+      #f9bc5766 20%, 
+      #f9bc5766 35%, 
+      #c9009833 45%);
   }
   50% {
-    background: linear-gradient(to right bottom, #ddd6fe80, #fecaca4D);
+    background: linear-gradient(to right bottom, 
+      #f9bc5780 25%, 
+      #f9bc5780 40%, 
+      #c900984D 55%);
   }
   60% {
-    background: linear-gradient(to right bottom, #ddd6fe99, #fecaca66);
+    background: linear-gradient(to right bottom, 
+      #f9bc5799 30%, 
+      #f9bc5799 45%, 
+      #c9009866 65%);
   }
   70% {
-    background: linear-gradient(to right bottom, #ddd6feb3, #fecaca80);
+    background: linear-gradient(to right bottom, 
+      #f9bc57b3 35%, 
+      #f9bc57b3 50%, 
+      #c9009880 75%);
   }
   80% {
-    background: linear-gradient(to right bottom, #ddd6feCC, #fecaca99);
+    background: linear-gradient(to right bottom, 
+      #f9bc57CC 40%, 
+      #f9bc57CC 55%, 
+      #c9009899 85%);
   }
   90% {
-    background: linear-gradient(to right bottom, #ddd6fee6, #fecacab3);
+    background: linear-gradient(to right bottom, 
+      #f9bc57e6 45%, 
+      #f9bc57e6 60%, 
+      #c90098b3 95%);
   }
   100% {
-    background: linear-gradient(to right bottom, #ddd6fe, #fecaca); /* Full opacity */
+    background: linear-gradient(to right bottom, 
+      #f9bc57 50%, 
+      #f9bc57 70%, 
+      #c90098 100%);
   }
 }
