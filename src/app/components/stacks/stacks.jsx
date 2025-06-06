@@ -10,7 +10,9 @@ function Stacks(){
     const strongStacks = ["React","NodeJs","Javascript","Typescript","Remix","CSS"];
 
     const handRef = useRef(null);
-    const animated = useRef(false);
+    const [animated,setAnimated] = useState(false);
+    const animatedRef = useRef(false);
+
     const [workingVisible,setWorkingVisible] = useState(false);
     const [labelsVisible,setLabelsVisible] = useState(false);
 
@@ -26,25 +28,38 @@ function Stacks(){
     const delay = async(ms) => {
         return new Promise(res => setTimeout(res,ms));
     }
-    
-    useEffect(() => {
-        const animate = async() =>{
-            if(!animated.current){
-                await delay(1100);
-                setGrowGradient('growGradient');
-                await delay(1000);
-                setCardClasses(initialCardClass2);
-                setWorkingVisible(true);
-                await delay(600);
-                setAfterAnimationHand('-translate-y-[100%]');
-                setCardClasses(initialCardClass3);
-                await delay(100);
-                setLabelsVisible(true);
-                await delay(500);
-                setAfterAnimationHand('hidden -translate-y-[100%]');
-                animated.current = true;
-            }
+
+    const replayAnimation = () => {
+        setGrowGradient('');
+        setCardClasses(initialCardClass1);
+        setWorkingVisible(false);
+        setAfterAnimationHand('');
+        setLabelsVisible(false);
+        setAnimated(false);
+        animatedRef.current = false;
+        handRef.current?.scrollIntoView({behaviour:'smooth',block:'nearest'});
+    }
+
+    const animate = async() =>{
+        if(!animatedRef.current){
+            await delay(1100);
+            setGrowGradient('growGradient');
+            await delay(1000);
+            setCardClasses(initialCardClass2);
+            setWorkingVisible(true);
+            await delay(600);
+            setAfterAnimationHand('-translate-y-[100%]');
+            setCardClasses(initialCardClass3);
+            await delay(100);
+            setLabelsVisible(true);
+            await delay(500);
+            setAfterAnimationHand('opacity-0 -translate-y-[100%]');
+            setAnimated(true);
+            animatedRef.current = true;
         }
+    }
+
+    useEffect(() => {
         const observer = new IntersectionObserver(
             ([entry]) => {
                 if(entry.isIntersecting){
@@ -118,6 +133,19 @@ function Stacks(){
 
                 </div>
             </div>
+            
+            {animated && (
+                <button 
+                    onClick={replayAnimation}
+                    className="m-5 relative"
+                >
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M15.91 11.672a.375.375 0 0 1 0 .656l-5.603 3.113a.375.375 0 0 1-.557-.328V8.887c0-.286.307-.466.557-.327l5.603 3.112Z" />
+                    </svg>
+                    <span className="text-xs">Replay</span>
+                </button>
+            )}
         </div>
     )
 } 
