@@ -68,65 +68,68 @@ body {
 @keyframes expandGradient {
   0% {
     background: linear-gradient(to right bottom, 
-      #f9bc5700 0%, 
-      #c9009800 0%);
+      #c7d2fe00 0%, 
+      #a3d4e600 0%, 
+      #fecaca00 0%);
   }
   10% {
     background: linear-gradient(to right bottom, 
-      #f9bc571A 5%, 
-      #c900980A 10%);
+      #c7d2fe1A 5%, 
+      #a3d4e61A 10%, 
+      #fecaca0A 15%);
   }
   20% {
     background: linear-gradient(to right bottom, 
-      #f9bc5733 10%, 
-      #c9009814 20%);
+      #c7d2fe33 10%, 
+      #a3d4e633 20%, 
+      #fecaca14 25%);
   }
   30% {
     background: linear-gradient(to right bottom, 
-      #f9bc574D 15%, 
-      #f9bc574D 25%, 
-      #c900981F 35%);
+      #c7d2fe4D 15%, 
+      #a3d4e64D 25%, 
+      #fecaca1F 35%);
   }
   40% {
     background: linear-gradient(to right bottom, 
-      #f9bc5766 20%, 
-      #f9bc5766 35%, 
-      #c9009833 45%);
+      #c7d2fe66 20%, 
+      #a3d4e666 35%, 
+      #fecaca33 45%);
   }
   50% {
     background: linear-gradient(to right bottom, 
-      #f9bc5780 25%, 
-      #f9bc5780 40%, 
-      #c900984D 55%);
+      #c7d2fe80 25%, 
+      #a3d4e680 40%, 
+      #fecaca4D 55%);
   }
   60% {
     background: linear-gradient(to right bottom, 
-      #f9bc5799 30%, 
-      #f9bc5799 45%, 
-      #c9009866 65%);
+      #c7d2fe99 30%, 
+      #a3d4e699 45%, 
+      #fecaca66 65%);
   }
   70% {
     background: linear-gradient(to right bottom, 
-      #f9bc57b3 35%, 
-      #f9bc57b3 50%, 
-      #c9009880 75%);
+      #c7d2feb3 35%, 
+      #a3d4e6b3 50%, 
+      #fecaca80 75%);
   }
   80% {
     background: linear-gradient(to right bottom, 
-      #f9bc57CC 40%, 
-      #f9bc57CC 55%, 
-      #c9009899 85%);
+      #c7d2feCC 40%, 
+      #a3d4e6CC 55%, 
+      #fecaca99 85%);
   }
   90% {
     background: linear-gradient(to right bottom, 
-      #f9bc57e6 45%, 
-      #f9bc57e6 60%, 
-      #c90098b3 95%);
+      #c7d2fee6 45%, 
+      #a3d4e6e6 60%, 
+      #fecacab3 95%);
   }
   100% {
     background: linear-gradient(to right bottom, 
-      #f9bc57 50%, 
-      #f9bc57 70%, 
-      #c90098 100%);
+      #c7d2fe 50%, 
+      #a3d4e6 70%, 
+      #fecaca 100%);
   }
 }
