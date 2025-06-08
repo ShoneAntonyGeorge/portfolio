@@ -7,7 +7,7 @@ import { useMediaQuery } from "react-responsive";
 import Expanded from "./components/journey/expanded";
 
 export default function Home(){
-  const [page,setPage] = useState(2);
+  const [page,setPage] = useState(0);
   const [scrolling, setScrolling] = useState(false);
   const isMobileView = useMediaQuery({query:'(max-width:767px)'});
   const numOfPages = pageDatas.length;
@@ -59,7 +59,7 @@ export default function Home(){
 
 
   return (
-    <div className="overflow-hidden w-screen">
+    <div className="overflow-hidden w-screen md:h-screen">
       <FloatingMenu {...{page,setPage,setScrolling}} className="z-2"/>
       {domLoaded && <div 
         className="flex md:flex-row flex-col md:transition-transform md:duration-700 min-h-screen md:ease-in-out"

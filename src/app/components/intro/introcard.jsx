@@ -40,26 +40,26 @@ export default function IntroCard(){
         // </div>
 
         <div className="absolute top-20 w-screen flex justify-center">
-            <div className="flex flex-col items-center  w-full md:w-3/5 gap-[3vh]">
-                <div className="flex items-center">
-                    <div className="min-w-[100px] max-h-[230px] max-w-[230px] min-h-[100px] w-[35vw] h-[35vw] rounded-full bg-gradient-to-l from-violet-200 to bg-yellow-200 flex justify-center items-center">
+            <div className="flex flex-col items-center min-h-screen  w-full md:w-3/5 gap-[3vh]">
+                <div className="flex items-center relative translate-x-70">
+                    <div className="min-w-[100px] max-h-[230px] max-w-[230px] min-h-[100px] w-[35vw] h-[35vw] rounded-full bg-black flex justify-center items-center">
                         <Image
                             src="/me3.jpeg"
                             width={300}
                             height={300}
                             alt="me"
-                            className="rounded-full w-full h-full"
+                            className="rounded-full w-full h-full shadow-2xl border-2"
                         />
                     </div>
-                    <div className="w-1/2">
-                        <span className="text-2xl md:text-4xl lg:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#ac1115] to-[#f9bc57]">
+                    <div className="w-1/5">
+                        <span className="drop-shadow-2xl text-2xl md:text-4xl lg:text-6xl font-bold text-transparent bg-clip-text bg-linear-to-r from-[#ac1115] to-[#f9bc57]">
                             Shone Antony George
                         </span>
                     </div>
                 </div>
                 
-                <div className="bg-white h-[55vh] md:h-[25vh] w-[95%] ">
-
+                <div className="bg-linear-to-r shadow-2xl flex from-[#ac1115] to-[#f9bc57] h-[55vh] rounded-t-full md:h-[65vh] w-full -bottom-15 absolute ">
+                    <span className="translate-x-50 text-6xl text-white top-15 absolute">Welcome everyone to this page</span>
                 </div>
                 
             </div>
