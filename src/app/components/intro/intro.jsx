@@ -5,15 +5,7 @@ import { useEffect, useState } from "react";
 import IntroCard from "./introcard";
 import Socials from "./socials";
 
-export default function Intro({scrolling,page}){
-
-    const [degree,setDegree] = useState(0);
-
-    useEffect(() => {
-        if(scrolling){
-            setDegree(prev => (prev%360)+90)
-        }
-    },[scrolling,page])
+export default function Intro(){
     
     return(
         <div className="bg-white w-screen relative" >

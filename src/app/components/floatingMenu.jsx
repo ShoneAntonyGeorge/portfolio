@@ -1,6 +1,6 @@
 import { pageDatas } from "./pageDatas"
 
-export default function FloatingMenu({page, setPage, setScrolling}){
+export default function FloatingMenu({page, setPage}){
     return(
         <div className="w-screen fixed bottom-25 md:flex justify-center hidden z-10">
             <div className="w-2/5 h-11 bg-white/40 rounded-b-2xl absolute top-0 shadow-xl flex justify-between px-7">
@@ -10,7 +10,7 @@ export default function FloatingMenu({page, setPage, setScrolling}){
                         <button 
                             className={page === index ? 'text-[#ac1115]' : 'text-gray-600'} 
                             key={index}
-                            onClick={() => {setPage(index);setScrolling(true)}}
+                            onClick={() => {setPage(index)}}
                         >
                             {label}
                         </button>

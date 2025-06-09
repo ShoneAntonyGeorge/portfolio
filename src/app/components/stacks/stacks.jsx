@@ -42,6 +42,7 @@ function Stacks(){
 
     const animate = async() =>{
         if(!animatedRef.current){
+            animatedRef.current = true;
             await delay(1100);
             setGrowGradient('growGradient');
             await delay(1000);
@@ -55,7 +56,6 @@ function Stacks(){
             await delay(500);
             setAfterAnimationHand('opacity-0 -translate-y-[100%]');
             setAnimated(true);
-            animatedRef.current = true;
         }
     }
 
