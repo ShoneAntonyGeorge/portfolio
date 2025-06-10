@@ -63,6 +63,7 @@ export default function Home(){
   useEffect(() => {
     if(isMobileView){
       setPage(0);
+      pageRef.current = 0;
     }
   },[isMobileView])
 
