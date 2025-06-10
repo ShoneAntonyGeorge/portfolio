@@ -46,7 +46,7 @@ function Stacks(){
         if(!animatedRef.current){
             animatedRef.current = true;
             setAfterAnimationHand('-translate-y-[100%] opacity-0')
-            await delay(1100);
+            await delay(1500);
             setGrowGradient('growGradient');
             await delay(1000);
             setAfterAnimationHand('');

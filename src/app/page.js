@@ -7,8 +7,14 @@ import { useMediaQuery } from "react-responsive";
 import Expanded from "./components/journey/expanded";
 
 export default function Home(){
-  const [page,setPage] = useState(1);
-  const pageRef = useRef(1);
+
+  const pageRef = useRef(0);
+  const [page,setPage] = useState(pageRef.current);
+
+  const updatePage = (page) => {
+    pageRef.current = page;
+    setPage(page);
+  }
   const scrollingRef = useRef(false);
   const prevAbsScrollDelta = useRef(0);
   const isMobileView = useMediaQuery({query:'(max-width:767px)'});
@@ -43,8 +49,7 @@ export default function Home(){
         const newPage = pageRef.current +  (delta/absDelta);
         if (newPage < numOfPages && newPage >= 0) {
           scrollingRef.current = true;
-          pageRef.current = newPage;
-          setPage(newPage);
+          updatePage(newPage);
 
           setTimeout(() => {
             scrollingRef.current = false;
@@ -62,15 +67,14 @@ export default function Home(){
 
   useEffect(() => {
     if(isMobileView){
-      setPage(0);
-      pageRef.current = 0;
+      updatePage(0);
     }
   },[isMobileView])
 
 
   return (
     <div className="overflow-hidden w-screen md:h-screen">
-      <FloatingMenu {...{page,setPage,pageRef}} className="z-2"/>
+      <FloatingMenu {...{page,updatePage}} className="z-2"/>
       {domLoaded && <div 
         className="flex md:flex-row flex-col md:transition-transform md:duration-700 min-h-screen md:ease-in-out"
         style={{
