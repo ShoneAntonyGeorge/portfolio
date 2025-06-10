@@ -6,7 +6,7 @@ import { useEffect, useRef, useState } from "react";
 
 function Stacks(){
 
-    const workingStacks = ["Spring Boot","Java","Python","Ruby","Angular","Rails","Docker","PostgreSQL","Bootstrap","NextJs","Tailwind CSS"];
+    const workingStacks = ["Spring Boot","Java","Python","Angular","Docker","PostgreSQL","Bootstrap","NextJs","Tailwind CSS"];
     const strongStacks = ["React","NodeJs","Javascript","Typescript","Remix","CSS"];
 
     const handRef = useRef(null);
@@ -58,7 +58,7 @@ function Stacks(){
             await delay(600);
             setAfterAnimationHand('-translate-y-[100%]');
             setCardClasses(initialCardClass3);
-            await delay(100);
+            await delay(400);
             setLabelsVisible(true);
             await delay(500);
             setAfterAnimationHand('opacity-0 -translate-y-[100%]');
