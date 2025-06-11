@@ -26,7 +26,7 @@ export default function Intro(){
                     <IntroCard/>
                 </div>
 
-                <div className={`relative md:absolute w-screen h-auto md:ml-[calc(${style.md_socialsWidth}+${style.md_introCardContainerWidth})] md:h-[100vh] md:w-[calc(100vh*${aspectRatio})] top-20 md:top-0`}>
+                <div className={`relative md:absolute w-screen h-auto md:ml-[calc(${style.md_socialsWidth}+${style.md_introCardContainerWidth})] md:h-[100vh] md:w-[calc(100vh*${aspectRatio})] top-${style._socialsHeight} md:top-0`}>
 
                     <Image
                         src={imageUrl}
