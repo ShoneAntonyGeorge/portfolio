@@ -10,6 +10,12 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  
+  --spacing-md_socials_width: 100px;
+  --spacing-md_introcard_container_width: 58vw;
+  --spacing-md_intro_image_margin_left:calc(var(--spacing-md_socials_width)+var(--spacing-md_introcard_container_width));
+  --spacing-socials-height:80px
+
 }
 
 @media (prefers-color-scheme: dark) {
