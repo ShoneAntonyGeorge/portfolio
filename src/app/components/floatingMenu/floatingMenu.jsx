@@ -1,4 +1,4 @@
-import { pageDatas } from "./pageDatas"
+import { pageDatas } from "../../data/pageDatas";
 
 export default function FloatingMenu({page, updatePage}){
     return(

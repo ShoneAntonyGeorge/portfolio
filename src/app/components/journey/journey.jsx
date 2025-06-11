@@ -1,6 +1,6 @@
 import React from "react";
 import Brief from "./brief";
-import journeyData from "./journeyData";
+import journeyData from "../../data/journeyData";
 
 function Journey({expand,setExpand}){
 

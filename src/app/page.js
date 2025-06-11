@@ -1,8 +1,8 @@
 "use client"
 
 import { useState, useEffect, useRef} from "react";
-import FloatingMenu from "./components/floatingMenu";
-import { pageDatas } from "./components/pageDatas";
+import FloatingMenu from "./components/floatingMenu/floatingMenu";
+import { pageDatas } from "./data/pageDatas";
 import { useMediaQuery } from "react-responsive";
 import Expanded from "./components/journey/expanded";
 

@@ -1,18 +1,8 @@
-"use client";
 import Image from "next/image";
 import IntroCard from "./introcard";
 import Socials from "./socials";
-import { useEffect } from "react";
 
 export default function Intro(){
-
-    useEffect(() => {
-        const image = new window.Image();
-        image.src = "/garden.png";
-        image.onload = () => {
-            console.log(image.width/image.height,image.height,image.width)
-        }
-    },[])
     
     return(
         <div className="bg-white w-screen relative" >
