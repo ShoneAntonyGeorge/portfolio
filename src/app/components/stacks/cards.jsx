@@ -12,6 +12,7 @@ function Cards({windowRef}){
     const animatedRef = useRef(false);
     
     const [workingVisible,setWorkingVisible] = useState(false);
+    //is a trigger for many conditions, it signifies the point when all the things are in place
     const [labelsVisible,setLabelsVisible] = useState(false);
 
     const cardStyles1 = 'opacity-0';
@@ -21,6 +22,9 @@ function Cards({windowRef}){
     
     const [cardStyles,setCardStyles] = useState(cardStyles1);
 
+    const baseCardDesign = "flex justify-center items-center  rounded-md border-6  border-gray-100 bg-gray-50";
+    const baseCardSize = "h-[100px] w-[68px]";
+
     const handStyles1 = 'translate-y-75 opacity-0';
     const handStyles2 = '-translate-y-[100%] opacity-0';
     const handStyles3 = '';
@@ -29,6 +33,14 @@ function Cards({windowRef}){
     const [handStyles,setHandStyles] = useState(handStyles1);
 
     const [backgroundForCards,setBackgroundForCards] = useState('');
+
+    const cardImageSrc = (stack) => (labelsVisible ? `/stacks/${stack.replace(" ","").toLowerCase()}.png` : "/card.png");
+    const cardImage = (stack) => (<Image  
+        alt="card" 
+        src={cardImageSrc(stack)} 
+        width={110} 
+        height={110}
+    />)
 
     const delay = async(ms) => {
         return new Promise(res => setTimeout(res,ms));
@@ -108,15 +120,8 @@ function Cards({windowRef}){
                 <div className="gap-10  flex relative w-screen flex-wrap justify-center ">
                     {strongStacks.map(stack => 
                         <div key={stack} className={cardStyles+" flex items-center flex-col"}>
-                            <div className={" flex justify-center items-center  rounded-md border-6  border-gray-100 bg-gray-50 h-[100px] w-[68px]"}>
-                                <Image  
-                                    alt="card" 
-                                    src={labelsVisible ? `/stacks/${stack.replace(" ","").toLowerCase()}.png` : "/card.png"} 
-                                    width={110} 
-                                    height={110}
-                                    className=""
-                                />
-                                
+                            <div className={`${baseCardDesign} ${baseCardSize}`}>
+                                {cardImage(stack)}
                             </div>
                             <span className="mt-1 text-md text-transparent bg-clip-text bg-gradient-to-l from-red-900 to-violet-900">{labelsVisible && stack}</span>
                         </div>
@@ -127,16 +132,9 @@ function Cards({windowRef}){
                 <span className="mb-5 relative top-10 text-xl">{labelsVisible && "WORKING KNOWLEDGE OF"} </span>
                 <div className="gap-10 top-10 mb-30 flex relative w-screen flex-wrap justify-center">
                     {workingStacks.map((stack) => 
-                        <div key={stack} className={cardStyles+" flex items-center flex-col transition-transform duration-600 ease-in-out"}>
-                            <div className={` flex justify-center items-center  rounded-md border-6  border-gray-100 bg-gray-50 ${!workingVisible && "hidden"} ${labelsVisible ? 'h-[88px] w-[60px]' : 'h-[100px] w-[68px]'}`}>
-                                <Image  
-                                    alt="card" 
-                                    src={labelsVisible ? `/stacks/${stack.replace(" ","").toLowerCase()}.png` : "/card.png"} 
-                                    width={110} 
-                                    height={110}
-                                    className=""
-                                />
-                                
+                        <div key={stack} className={cardStyles+" flex items-center flex-col"}>
+                            <div className={`${baseCardDesign} ${!workingVisible && "hidden"} ${labelsVisible ? 'h-[88px] w-[60px]' : baseCardSize}`}>
+                                {cardImage(stack)}
                             </div>
                             <span className="mt-1 text-xs text-transparent bg-clip-text bg-gradient-to-l from-red-900 to-violet-900">{labelsVisible && stack}</span>
                         </div>
