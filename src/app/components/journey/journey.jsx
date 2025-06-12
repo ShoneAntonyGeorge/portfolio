@@ -2,17 +2,19 @@ import React from "react";
 import Brief from "./brief";
 import journeyData from "../../data/journeyData";
 
-function Journey({expand,setExpand}){
-
-    return(
-        <div className="bg-[url(/abstract.png)] relative w-screen min-h-screen md:h-screen flex flex-col justify-center items-center">
-
-            {journeyData.map((journey) => 
-                <Brief key={journey.title} journey={journey} expand={expand===journey} setExpand={setExpand}/>
-            )}
-            
-        </div>
-    )
+function Journey({ expand, setExpand }) {
+  return (
+    <div className="relative flex min-h-screen w-screen flex-col items-center justify-center bg-[url(/abstract.png)] md:h-screen">
+      {journeyData.map((journey) => (
+        <Brief
+          key={journey.title}
+          journey={journey}
+          expand={expand === journey}
+          setExpand={setExpand}
+        />
+      ))}
+    </div>
+  );
 }
 
 export default React.memo(Journey);
