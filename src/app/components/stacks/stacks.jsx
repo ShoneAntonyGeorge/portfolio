@@ -97,7 +97,7 @@ function Stacks(){
                     height={300}
                     width={300}
                 />
-                <span className="text-5xl font-bold w-3/4 text-center bg-gradient-to-br from-blue-500 to-yellow-400 text-transparent bg-clip-text">
+                <span className="text-4xl md:text-5xl font-bold w-3/4 text-center bg-gradient-to-br from-blue-500 to-yellow-400 text-transparent bg-clip-text">
                     REVEALING CARDS AND COLORS
                 </span>
             </div>

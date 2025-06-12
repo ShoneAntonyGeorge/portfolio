@@ -22,7 +22,7 @@ function Expanded({setExpand,journey}){
                     <span className=" font-light font-serif italic lg:text-base/6 text-sm">"{journey.description}"</span>
 
                     <ul className="list-disc p-5 flex flex-col gap-4">
-                        {journey.points.map((point,index) => <li key={index} className="text-sm font-semibold lg:text-lg">{point}</li>)}
+                        {journey.points.map((point,index) => <li key={index} className="text-sm font-semibold lg:text-lg text-gray-700">{point}</li>)}
                     </ul>
 
                 </div>
