@@ -18,24 +18,31 @@ function Stacks(){
     const [workingVisible,setWorkingVisible] = useState(false);
     const [labelsVisible,setLabelsVisible] = useState(false);
 
-    const initialCardClass1 = "absolute top-0 -translate-y-[45%] scale-60";
-    const initialCardClass2 = "transition-transform duration-800 ease-in-out";
-    const initialCardClass3 = "cardFlipClass transition-transform duration-800 ease-in-out";
+    const cardStyles1 = 'opacity-0';
+    const cardStyles2 = "absolute top-0 -translate-y-[45%] scale-60";
+    const cardStyles3 = "transition-transform duration-800 ease-in-out";
+    const cardStyles4 = "cardFlipClass transition-transform duration-800 ease-in-out";
     
-    const [cardClasses,setCardClasses] = useState('opacity-0');
-    const [afterAnimationHand,setAfterAnimationHand] = useState('opacity-0');
+    const [cardStyles,setCardStyles] = useState(cardStyles1);
 
-    const [growGradient,setGrowGradient] = useState('');
+    const handStyles1 = 'translate-y-75 opacity-0';
+    const handStyles2 = '-translate-y-[100%] opacity-0';
+    const handStyles3 = '';
+    const handStyles4 = '-translate-y-[100%]';
+    const handStyles5 = 'opacity-0 -translate-y-[100%]';
+    const [handStyles,setHandStyles] = useState(handStyles1);
+
+    const [backgroundForCards,setBackgroundForCards] = useState('');
 
     const delay = async(ms) => {
         return new Promise(res => setTimeout(res,ms));
     }
 
     const replayAnimation = () => {
-        setGrowGradient('');
-        setCardClasses('opacity-0');
+        setBackgroundForCards('');
+        setCardStyles(cardStyles1);
         setWorkingVisible(false);
-        setAfterAnimationHand('opacity-0');
+        setHandStyles(handStyles1);
         setLabelsVisible(false);
         setAnimated(false);
         animatedRef.current = false;
@@ -45,23 +52,23 @@ function Stacks(){
     const animate = async() =>{
         if(!animatedRef.current){
             animatedRef.current = true;
-            setAfterAnimationHand('-translate-y-[100%] opacity-0')
-            await delay(1500);
-            setGrowGradient('growGradient');
+            setHandStyles(handStyles2);
+            await delay(1200);
+            setBackgroundForCards('growGradient');
             await delay(1000);
-            setAfterAnimationHand('');
+            setHandStyles(handStyles3);
             await delay(500);
-            setCardClasses(initialCardClass1)
+            setCardStyles(cardStyles2)
             await delay(1000);
-            setCardClasses(initialCardClass2);
+            setCardStyles(cardStyles3);
             setWorkingVisible(true);
             await delay(600);
-            setAfterAnimationHand('-translate-y-[100%]');
-            setCardClasses(initialCardClass3);
+            setHandStyles(handStyles4);
+            setCardStyles(cardStyles4);
             await delay(400);
             setLabelsVisible(true);
             await delay(500);
-            setAfterAnimationHand('opacity-0 -translate-y-[100%]');
+            setHandStyles(handStyles5);
             setAnimated(true);
         }
     }
@@ -102,7 +109,7 @@ function Stacks(){
                 </span>
             </div>
 
-            <div className={`${growGradient} min-h-screen md:h-screen h-fit relative w-screen overflow-y-hidden`}>
+            <div className={`${backgroundForCards} min-h-screen md:h-screen h-fit relative w-screen overflow-y-hidden`}>
 
                 <Image
                     ref={handRef}
@@ -110,14 +117,14 @@ function Stacks(){
                     width={120}
                     height={120}
                     alt="hands"
-                    className={`${afterAnimationHand} absolute top-0 left-1/2 -translate-x-1/2 transition-transform duration-500 ease-in-out`}
+                    className={`${handStyles} absolute top-0 left-1/2 -translate-x-1/2 transition-transform duration-500 ease-in-out`}
                 />
 
                 <div className={`relative flex flex-col items-center w-screen  ${labelsVisible ? 'top-10' :'top-30'}`}>
                     <span className="mb-5 text-2xl">{labelsVisible && "STRONG EXPERIENCE IN"} </span>
                     <div className="gap-10  flex relative w-screen flex-wrap justify-center ">
                         {strongStacks.map(stack => 
-                            <div key={stack} className={cardClasses+" flex items-center flex-col"}>
+                            <div key={stack} className={cardStyles+" flex items-center flex-col"}>
                                 <div className={" flex justify-center items-center  rounded-md border-6  border-gray-100 bg-gray-50 h-[100px] w-[68px]"}>
                                     <Image  
                                         alt="card" 
@@ -136,8 +143,8 @@ function Stacks(){
 
                     <span className="mb-5 relative top-10 text-xl">{labelsVisible && "WORKING KNOWLEDGE OF"} </span>
                     <div className="gap-10 top-10 mb-30 flex relative w-screen flex-wrap justify-center">
-                        {workingStacks.map((stack,index) => 
-                            <div key={stack} className={cardClasses+" flex items-center flex-col transition-transform duration-600 ease-in-out"}>
+                        {workingStacks.map((stack) => 
+                            <div key={stack} className={cardStyles+" flex items-center flex-col transition-transform duration-600 ease-in-out"}>
                                 <div className={` flex justify-center items-center  rounded-md border-6  border-gray-100 bg-gray-50 ${!workingVisible && "hidden"} ${labelsVisible ? 'h-[88px] w-[60px]' : 'h-[100px] w-[68px]'}`}>
                                     <Image  
                                         alt="card" 
