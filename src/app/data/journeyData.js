@@ -17,13 +17,12 @@ export default  [
     {
         title:"Java Tutor At Sevendyne",
         image:"sevendyne.jpg",
-        description:`Started the work on short notice, the day after I was informed I got the job.
-            Since the students I was training were from another country with 2hrs 30mins time difference 
-            I had to go to work early morning. Both these factors made it challenging and really pushed me 
-            and made me realize the depth of my abilities. Some of the topics were not familiar to me and 
-            had to be looked through the night before and teach them the next morning. Overall I was satisfied 
-            with how things came out. Made the experience more sweet by students reaching out 
-            after the course was over to thank me.`,
+        description:`I started the work on short notice — the day after I was informed I got the job.
+            Since the students I was training were from another country with a 2 hour 30 minute time difference, I had to begin work early in the morning.
+            Both of these factors made the experience challenging and really pushed me, helping me realize the depth of my abilities.
+            Some of the topics were unfamiliar to me, so I spent the nights before studying them and teaching the material the next morning.
+            Overall, I was satisfied with how everything turned out.
+            What made the experience even more rewarding was the students reaching out after the course to thank me personally.`,
         points:[
             "Trained and managed around 20 students",
             "Took 7hour classes 5 days of the week",
@@ -35,7 +34,7 @@ export default  [
         title:"Full Stack Developer At CSR-Informatik",
         image:"csr.svg",
         description:`My first experience as a professional developer and couldn't ask for a much better environment.
-            everyone involved within the organization was quite understanding and allowed me to take my own time 
+            Everyone involved within the organization was quite understanding and allowed me to take my own time 
             to get to the pace that was needed. On top of that I was also able to receive valuable guidance and 
             knowledge since they possessed multiple decades of experience working with various fields of 
             computer science. It pretty much shaped who I am as a developer today. Initially worked with many programming languages 

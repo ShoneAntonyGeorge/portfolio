@@ -24,6 +24,7 @@
     "tailwindcss": "^4"
   },
   "prettier":{
-    "plugins": ["prettier-plugin-tailwindcss"]
+    "plugins": ["prettier-plugin-tailwindcss"],
+    "tabWidth": 4
   }
 }
