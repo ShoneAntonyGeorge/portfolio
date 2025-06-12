@@ -52,7 +52,7 @@ export default function IntroCard() {
             <div className="flex w-full flex-row items-center justify-start gap-4 bg-gradient-to-br from-red-200 to-[#f9bc57]">
                 <div className="aspect-square w-[12vw] min-w-[110px] shrink-0 md:min-w-[150px]">
                     <Image
-                        src="/me3.jpeg"
+                        src="/me.jpeg"
                         width={300}
                         height={300}
                         alt="me"
