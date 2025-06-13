@@ -10,7 +10,7 @@ export default function IntroCard() {
   const expandedStyle = "lg:text-[1.2vw] ";
 
   const expandedContent = (
-    <div className="mt-5 space-y-3 text-sm leading-normal font-light text-gray-700 md:text-xs md:font-extralight lg:text-[1.1vw]">
+    <div className="mt-4 space-y-3 text-sm leading-normal font-light text-gray-700 md:text-xs md:font-extralight lg:text-[1.1vw]">
       <p>
         I wanted this portfolio to reflect who I am as a person: happy,
         colorful, capable, rooted in culture, yet always reaching toward the
@@ -63,9 +63,9 @@ export default function IntroCard() {
         </span>
       </div>
 
-      <div className="mt-3 p-5 md:mt-0 md:p-10">
+      <div className="p-4 md:mt-0 md:p-4">
         {introContent}
-        <div className="mt-5 flex w-full flex-col items-center-safe">
+        <div className="mt-4 flex w-full flex-col items-center-safe">
           <hr className="h-1 w-3/5" />
           <svg
             onClick={() => setTextExpanded((prev) => !prev)}

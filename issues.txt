@@ -1,1 +1,0 @@
-useffect executing double in dev might be causing scroll to go out of bounds
