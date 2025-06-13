@@ -10,7 +10,7 @@ export default function FloatingMenu({ page, updatePage }) {
             <button
               className={
                 (page === index ? "underline" : "") +
-                " w-[100px] text-xs text-white italic lg:text-base"
+                " w-[100px] text-xs text-white lg:text-base"
               }
               key={index}
               onClick={() => updatePage(index)}
