@@ -31,7 +31,7 @@ function Expanded({ setExpand, journey }) {
         </div>
 
         <div className="flex h-full w-full flex-col overflow-y-auto rounded-r-3xl p-5 lg:w-7/10 lg:p-15">
-          <span className="font-serif text-sm font-light italic lg:text-base/6">
+          <span className="font-serif text-gray-700 text-sm font-light italic lg:text-base/6">
             "{journey.description}"
           </span>
 
