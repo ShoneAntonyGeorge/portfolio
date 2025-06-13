@@ -33,8 +33,8 @@ export default function Intro() {
           <Image
             src={imageUrl}
             alt="garden"
-            fill
-            sizes="auto"
+            width={1536}
+            height={1024}
             className="h-full w-full"
             priority
           />
