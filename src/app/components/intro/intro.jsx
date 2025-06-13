@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 
 export default function Intro() {
   const imageUrl = "/garden.png";
-  const [mgImageWidth, setMdImageWidth] = useState("150vw");
+  const [mgImageWidth, setMdImageWidth] = useState("");
 
   useEffect(() => {
     const image = new window.Image();
@@ -27,15 +27,16 @@ export default function Intro() {
         </div>
 
         <div
-          style={{ "--mg_image_width": mgImageWidth }}
+          style={{ "--mg_image_width": mgImageWidth ?? "150vw" }}
           className={`md:ml-md_intro_image_margin_left top-socials-height relative h-auto w-screen md:absolute md:top-0 md:h-[100vh] md:w-[var(--mg_image_width)]`}
         >
           <Image
             src={imageUrl}
             alt="garden"
-            width={1800}
-            height={1800}
+            fill
+            sizes="auto"
             className="h-full w-full"
+            priority
           />
         </div>
       </div>

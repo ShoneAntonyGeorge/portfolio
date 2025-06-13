@@ -130,9 +130,9 @@ function Cards({ windowRef }) {
         ref={handRef}
         src="/hands.png"
         width={120}
-        height={120}
+        height={180}
         alt="hands"
-        className={`${handStyles} absolute top-0 left-1/2 -translate-x-1/2 transition-transform duration-500 ease-in-out`}
+        className={`${handStyles} h-[180px] w-auto absolute top-0 left-1/2 -translate-x-1/2 transition-transform duration-500 ease-in-out`}
       />
 
       <div
