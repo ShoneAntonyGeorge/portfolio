@@ -64,6 +64,23 @@ export default function Home(){
     }
   }, [isMobileView,expand]);
 
+  useEffect(() => {
+    if (!(expand && isMobileView)) return;
+
+    //locking scroll
+    const scrollY = window.scrollY;
+    const origninalPositon = document.body.style.position;
+    const origninalTop = document.body.style.top;
+    document.body.style.position = 'fixed';
+    document.body.style.top = `-${scrollY}px`;
+
+    return () => {
+      document.body.style.position = origninalPositon;
+      document.body.style.top = origninalTop;
+      window.scrollTo(0, scrollY);
+    };
+  }, [expand,isMobileView]);
+
 
   useEffect(() => {
     if(isMobileView){
@@ -74,7 +91,7 @@ export default function Home(){
 
   return (
     <div className="overflow-hidden w-screen md:h-screen">
-      <FloatingMenu {...{page,updatePage}} className="z-2"/>
+      {!expand && <FloatingMenu {...{page,updatePage}} className="z-2"/>}
       {domLoaded && <div 
         className="flex md:flex-row flex-col md:transition-transform md:duration-700 min-h-screen md:ease-in-out"
         style={{

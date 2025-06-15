@@ -3,7 +3,7 @@ import React from "react";
 function Expanded({ setExpand, journey }) {
   return (
     <div className="expandSlideClass fixed top-0 z-1000 flex h-screen w-screen items-center justify-center">
-      <div className="relative z-10 flex max-h-95/100 min-h-6/7 w-95/100 flex-col overflow-hidden rounded-3xl border-3 border-[#5a045d] bg-white shadow-lg lg:h-6/7 lg:w-4/5 lg:flex-row">
+      <div className="relative z-10 flex max-h-95/100 min-h-7/8 w-95/100 flex-col overflow-hidden rounded-3xl border-3 border-[#5a045d] bg-white shadow-lg lg:h-6/7 lg:w-4/5 lg:flex-row">
         <div
           onClick={() => setExpand("")}
           className="absolute top-0 right-0 m-5 flex h-[30px] w-[30px] items-center justify-center hover:bg-gray-200"
