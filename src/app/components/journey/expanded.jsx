@@ -35,7 +35,7 @@ function Expanded({ setExpand, journey }) {
             "{journey.description}"
           </span>
 
-          <ul className="flex list-disc flex-col gap-4 p-4 mt-8">
+          <ul className="flex list-disc flex-col gap-4 p-4 my-8">
             {journey.points.map((point, index) => (
               <li
                 key={index}
