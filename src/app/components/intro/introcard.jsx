@@ -13,13 +13,13 @@ export default function IntroCard() {
     <div className="mt-4 space-y-3 text-sm leading-normal font-light text-gray-700 md:text-xs md:font-extralight lg:text-[1.1vw]">
       <p>
         I wanted this portfolio to reflect who I am as a person: happy,
-        colorful, capable, rooted in culture, yet always reaching toward the
+        colorful, capable — rooted in culture, yet always reaching towards the
         future. To showcase the range of my capabilities, I've adapted different
         design styles for different pages.
       </p>
       <p>
         The site is fully responsive, so feel free to resize your browser or
-        view it on mobile, tablet, or desktop — whatever works best for you.
+        view it on your mobile, tablet, or desktop — whatever works best for you.
       </p>
       <p>
         I believe in sharing knowledge, so the code repository is open and
