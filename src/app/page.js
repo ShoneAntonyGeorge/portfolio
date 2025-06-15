@@ -74,7 +74,7 @@ export default function Home(){
 
   return (
     <div className="overflow-hidden w-screen md:h-screen">
-      <FloatingMenu {...{page,updatePage}} className="z-2"/>
+      {!expand && <FloatingMenu {...{page,updatePage}} className="z-2"/>}
       {domLoaded && <div 
         className="flex md:flex-row flex-col md:transition-transform md:duration-700 min-h-screen md:ease-in-out"
         style={{
