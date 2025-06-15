@@ -64,6 +64,22 @@ export default function Home(){
     }
   }, [isMobileView,expand]);
 
+  useEffect(() => {
+    if (!(expand && isMobileView)) return;
+
+    const scrollY = window.scrollY;
+    const origninalPositon = document.body.style.position;
+    const origninalTop = document.body.style.top;
+    document.body.style.position = 'fixed';
+    document.body.style.top = `-${scrollY}px`;
+
+    return () => {
+      document.body.style.position = origninalPositon;
+      document.body.style.top = origninalTop;
+      window.scrollTo(0, scrollY);
+    };
+  }, [expand,isMobileView]);
+
 
   useEffect(() => {
     if(isMobileView){
