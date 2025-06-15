@@ -25,12 +25,12 @@ function Expanded({ setExpand, journey }) {
         </div>
 
         <div className="flex h-2/10 w-full items-center rounded-t-3xl border-b-3 p-5 lg:h-[110%] lg:w-fit lg:max-w-1/3 lg:rounded-t-none lg:rounded-l-3xl lg:border-r-3 lg:border-r-[#5a045d]">
-          <span className="w-fit min-w-6/10 bg-gradient-to-r from-[#5a045d] to-[#c90098] bg-clip-text text-xl font-bold text-transparent lg:text-5xl">
+          <span className="w-fit min-w-6/10 bg-gradient-to-r from-[#5a045d] to-[#c90098] bg-clip-text text-xl font-bold text-transparent lg:text-[2.5rem]">
             {journey.title}
           </span>
         </div>
 
-        <div className="flex h-full w-full flex-col overflow-y-auto rounded-r-3xl p-5 lg:w-7/10 lg:p-15">
+        <div className="flex h-full flex-1 w-full flex-col overflow-y-auto rounded-r-3xl p-5 lg:w-7/10 lg:p-15">
           <span className="font-serif text-black text-sm font-light italic lg:text-base/6">
             "{journey.description}"
           </span>
