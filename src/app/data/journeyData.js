@@ -2,11 +2,7 @@ export default  [
     {
         title:"Education",
         image:"books.jpg",
-        description:`The journey started with one day while in 8th grade hearing an announcement in school
-            that there is a competition for HTML. Confused as what did HTML meant, to then self learning
-            HTML and CSS,to achieving highest grade with rank as high as 3rd multiple times in district level
-            interschool web page designing competition, to finally graduating from college
-            completing my degree in Computer Science.`,
+        description:`The journey began one day in 8th grade when I heard an announcement about an HTML competition at school. Confused about what HTML even meant, I started self-learning HTML and CSS. That curiosity turned into passion, leading me to earn top grades and place as high as 3rd multiple times in district-level interschool web design competitions. Eventually, it all culminated in earning my degree in Computer Science.`,
         points:[
             "Highest grade for all subjects in class 10",
             "Highest grade in district level web designing competition",
@@ -25,20 +21,19 @@ export default  [
             What made the experience even more rewarding was the students reaching out after the course to thank me personally.`,
         points:[
             "Trained and managed around 20 students",
-            "Took 7hour classes 5 days of the week",
-            "Covered topics like Core-Java, JSP, Hibernate and SpringBoot",
+            "Took 7 hour classes 5 days of the week for a total of 4 weeks",
+            "Covered topics like Core Java, JSP, Hibernate and SpringBoot",
             "Conducted regular evaluations of students"
         ]
     },
     {
         title:"Full Stack Developer At CSR-Informatik",
         image:"csr.svg",
-        description:`My first experience as a professional developer and couldn't ask for a much better environment.
-            Everyone involved within the organization was quite understanding and allowed me to take my own time 
-            to get to the pace that was needed. On top of that I was also able to receive valuable guidance and 
-            knowledge since they possessed multiple decades of experience working with various fields of 
-            computer science. It pretty much shaped who I am as a developer today. Initially worked with many programming languages 
-            being able to manage many but not master any, I finally found myself working and mastering Javascript/Typescript.`,
+        description:`My first experience as a professional developer couldn't have taken place in a better environment.
+            Everyone in the organization was incredibly understanding, allowing me the time I needed to adjust and get up to speed.
+            On top of that, I received valuable guidance and insight from team members with decades of experience across various areas of computer science.
+            This experience played a major role in shaping who I am as a developer today.
+            While I initially explored many programming languages — managing to work with several but mastering none — I eventually found my focus and expertise in JavaScript and TypeScript.`,
         points:[
             "Worked on a product management and inventory system with Angular as fronted with material UI, NgRx and Java Spring Boot as backend",
             "Developed a Shopify web app for users to migrate e-commerce store products from their legacy platform to Shopify, using Remix (React for frontend, server-side rendering) with a Node.js runtime for backend and postgreSQL DataBase(using Docker)",
