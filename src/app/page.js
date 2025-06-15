@@ -67,6 +67,7 @@ export default function Home(){
   useEffect(() => {
     if (!(expand && isMobileView)) return;
 
+    //locking scroll
     const scrollY = window.scrollY;
     const origninalPositon = document.body.style.position;
     const origninalTop = document.body.style.top;
