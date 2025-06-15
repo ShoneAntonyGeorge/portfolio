@@ -74,13 +74,14 @@ function Cards({ windowRef }) {
     setAnimated(false);
     animatedRef.current = false;
     windowRef.current?.scrollIntoView({ behaviour: "smooth", block: "start" });
+    animate();
   };
 
   const animate = async () => {
     if (!animatedRef.current) {
       animatedRef.current = true;
       setHandStyles(handStyles2);
-      await delay(1200);
+      await delay(600);
       setBackgroundForCards("growGradient");
       await delay(1000);
       setHandStyles(handStyles3);
@@ -105,6 +106,7 @@ function Cards({ windowRef }) {
       ([entry]) => {
         if (entry.isIntersecting) {
           animate();
+          observer.disconnect();
         }
       },
       {
@@ -116,9 +118,7 @@ function Cards({ windowRef }) {
     }
 
     return () => {
-      if (handRef.current) {
-        observer.unobserve(handRef.current);
-      }
+      observer.disconnect();
     };
   }, []);
 
