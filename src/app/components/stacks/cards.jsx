@@ -118,9 +118,7 @@ function Cards({ windowRef }) {
     }
 
     return () => {
-      if (handRef.current) {
-        observer.unobserve(handRef.current);
-      }
+      observer.disconnect();
     };
   }, []);
 
