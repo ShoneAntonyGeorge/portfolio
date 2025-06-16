@@ -1,21 +1,15 @@
-"use client";
 import Image from "next/image";
 import IntroCard from "./introcard";
 import Socials from "./socials";
-import { useEffect, useState } from "react";
 
 export default function Intro() {
-  const imageUrl = "/garden.png";
-  const [mgImageWidth, setMdImageWidth] = useState("");
 
-  useEffect(() => {
-    const image = new window.Image();
-    image.src = imageUrl;
-    image.onload = () => {
-      const width = (image.width / image.height) * 100 + "vh";
-      setMdImageWidth(width);
-    };
-  }, []);
+  const imageUrl = "/garden.png";
+  //height will be 100vh and with the current image resolution width is 1.5 times more
+  //not implementing dynamic calculation because in the frontend it takes time to process causing
+  //squashed image to display initially and not using server side computing since its overkill
+  const imageWidthClass = "md:w-[150vh]";
+
 
   return (
     <div className="relative w-screen bg-white">
@@ -27,8 +21,7 @@ export default function Intro() {
         </div>
 
         <div
-          style={{ "--mg_image_width": mgImageWidth ?? "150vw" }}
-          className={`md:ml-md_intro_image_margin_left top-socials-height relative h-auto w-screen md:absolute md:top-0 md:h-[100vh] md:w-[var(--mg_image_width)]`}
+          className={`md:ml-md_intro_image_margin_left top-socials-height relative h-auto w-screen md:absolute md:top-0 md:h-[100vh] ${imageWidthClass}`}
         >
           <Image
             src={imageUrl}
