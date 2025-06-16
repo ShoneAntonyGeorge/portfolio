@@ -3,13 +3,11 @@ import IntroCard from "./introcard";
 import Socials from "./socials";
 
 export default function Intro() {
-
   const imageUrl = "/garden.png";
   //height will be 100vh and with the current image resolution width is 1.5 times more
   //not implementing dynamic calculation because in the frontend it takes time to process causing
   //squashed image to display initially and not using server side computing since its overkill
   const imageWidthClass = "md:w-[150vh]";
-
 
   return (
     <div className="relative w-screen bg-white">
