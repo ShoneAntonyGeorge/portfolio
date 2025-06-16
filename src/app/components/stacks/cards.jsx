@@ -52,14 +52,28 @@ function Cards({ windowRef }) {
 
   const [backgroundForCards, setBackgroundForCards] = useState("");
 
-  const cardImageSrc = (stack) => (
-    labelsVisible
-      ? `/stacks/${stack.replace(" ", "").toLowerCase()}.png`
-      : "/card.png");
+  const cardImageSrc = (stack) =>
+    `/stacks/${stack.replace(" ", "").toLowerCase()}.png`;
 
   const cardImage = (stack) => (
-    <Image alt="card" src={cardImageSrc(stack)} width={110} height={110} />
+    <img
+      alt="card"
+      src={labelsVisible ? cardImageSrc(stack) : "/card.png"}
+      width={110}
+      height={110}
+    />
   );
+
+  const preloadImages = () => {
+    return [...workingStacks, ...strongStacks].map((stack) => (
+      <link
+        key={stack}
+        rel="preload"
+        as="image"
+        href={`${cardImageSrc(stack)}`}
+      />
+    ));
+  };
 
   const delay = async (ms) => {
     return new Promise((res) => setTimeout(res, ms));
@@ -126,13 +140,15 @@ function Cards({ windowRef }) {
     <div
       className={`${backgroundForCards} relative h-fit min-h-screen w-screen overflow-y-hidden md:h-screen`}
     >
+      {preloadImages()}
+
       <Image
         ref={handRef}
         src="/hands.png"
         width={120}
         height={180}
         alt="hands"
-        className={`${handStyles} h-[180px] w-auto absolute top-0 left-1/2 -translate-x-1/2 transition-transform duration-500 ease-in-out`}
+        className={`${handStyles} absolute top-0 left-1/2 h-[180px] w-auto -translate-x-1/2 transition-transform duration-500 ease-in-out`}
       />
 
       <div
