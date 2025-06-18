@@ -4,6 +4,7 @@ import React from "react";
 function Brief({ journey, expand, setExpand }) {
   return (
     <div
+      onClick={() => setExpand(journey)}
       className={`${expand && "journeySlideClass"} relative my-10 flex h-[100px] w-8/10 rounded-xl bg-white shadow-lg outline-10 outline-white/50 md:w-[50%]`}
     >
       <div className="absolute bottom-5 -left-5 h-[50px] w-[50px] rounded-md border-3 border-[white] bg-white shadow-sm shadow-[#c90098] md:h-[130px] md:w-[130px]">
@@ -23,7 +24,6 @@ function Brief({ journey, expand, setExpand }) {
         </div>
       </div>
       <div
-        onClick={() => setExpand(journey)}
         className="flex h-full w-2/13 items-center justify-center rounded-r-xl border-l-1 border-gray-200/60 bg-gray-50/80 hover:shadow-lg md:w-1/13"
       >
         <svg
