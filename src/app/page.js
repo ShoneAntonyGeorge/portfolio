@@ -85,14 +85,14 @@ export default function Home(){
       }
     }
     fixToJourney();
-    window.addEventListener('resize',fixToJourney);
+    // window.addEventListener('resize',fixToJourney);
 
     return () => {
       console.log("exiting")
       document.body.style.position = origninalPositon;
       document.body.style.top = origninalTop;
       window.scrollTo(0, initialScrollY);
-      window.removeEventListener('resize',fixToJourney);
+      // window.removeEventListener('resize',fixToJourney);
     };
   }, [expand,isMobileView]);
 
