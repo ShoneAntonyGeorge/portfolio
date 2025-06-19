@@ -87,7 +87,7 @@ function Cards({ windowRef }) {
     setLabelsVisible(false);
     setAnimated(false);
     animatedRef.current = false;
-    windowRef.current?.scrollIntoView({ behaviour: "smooth", block: "start" });
+    windowRef.current?.scrollIntoView({ behavior: "instant", block: "start" });
     animate();
   };
 
