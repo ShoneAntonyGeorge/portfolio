@@ -57,15 +57,15 @@ export default function IntroCard() {
   );
 
   return (
-    <div ref={introCardRef} className="mt-25 mb-50 flex h-fit w-9/10 flex-col items-center overflow-hidden rounded-2xl shadow-2xl outline-2 outline-[#f9bc57] md:mt-5 md:mb-0 lg:w-fit lg:max-w-[70%]">
-      <div className="flex w-full flex-row items-center justify-start gap-4 bg-gradient-to-br from-red-200 to-[#f9bc57]">
+    <div ref={introCardRef} className="mt-25 scroll-m-15 mb-50 flex h-fit w-9/10 flex-col items-center rounded-2xl shadow-2xl outline-2 outline-[#f9bc57] md:mt-5 md:mb-0 lg:w-fit lg:max-w-[70%]">
+      <div className="flex w-full flex-row items-center justify-start gap-4 bg-gradient-to-br rounded-t-2xl from-red-200 to-[#f9bc57]">
         <div className="aspect-square w-[12vw] min-w-[110px] shrink-0 md:min-w-[150px]">
           <Image
             src="/me.jpeg"
             width={300}
             height={300}
             alt="me"
-            className="h-full w-full object-cover"
+            className="h-full w-full object-cover rounded-tl-2xl"
           />
         </div>
         <span className="bg-white bg-clip-text text-2xl font-semibold text-transparent md:text-[3vw]">
