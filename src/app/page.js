@@ -72,7 +72,7 @@ export default function Home(){
     const origninalPositon = document.body.style.position;
     const origninalTop = document.body.style.top;
     
-    const initialScrollY = window.scrollY;
+    const elementTop = journeyPageRef.current?.getBoundingClientRect().top + window.scrollY;
 
     const fixToJourney = () => {
       // console.log("triggering")
@@ -91,7 +91,7 @@ export default function Home(){
       console.log("exiting")
       document.body.style.position = origninalPositon;
       document.body.style.top = origninalTop;
-      window.scrollTo(0, initialScrollY);
+      window.scrollTo(0, elementTop);
       // window.removeEventListener('resize',fixToJourney);
     };
   }, [expand,isMobileView]);
