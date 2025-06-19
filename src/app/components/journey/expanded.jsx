@@ -4,9 +4,12 @@ import React, {useEffect,useState} from "react";
 function Expanded({ setExpand, journey }) {
 
     const [maxHeight,setMaxHeight] = useState('95%');
+    const [random,setRandom] = useState(1); 
   
     useEffect(() => {
       const resize = () => {
+        console.log("resizing")
+        setRandom(Math.random())
         setMaxHeight((window.innerHeight*0.95)+"px");
       }
       resize();
@@ -40,7 +43,7 @@ function Expanded({ setExpand, journey }) {
 
         <div className="flex h-2/10 w-full items-center rounded-t-3xl border-b-3 p-5 lg:h-[110%] lg:w-fit lg:max-w-1/3 lg:rounded-t-none lg:rounded-l-3xl lg:border-r-3 lg:border-r-[#5a045d]">
           <span className="w-fit min-w-6/10 bg-gradient-to-r from-[#5a045d] to-[#c90098] bg-clip-text text-xl font-bold text-transparent lg:text-[2.5rem]">
-            {journey.title}
+            {journey.title}{random}
           </span>
         </div>
 
