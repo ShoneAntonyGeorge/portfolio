@@ -1,13 +1,23 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+import { useState,useRef } from "react";
 
 export default function IntroCard() {
   const [textExpanded, setTextExpanded] = useState(false);
 
   const briefStyle = "lg:text-[1.7vw] ";
   const expandedStyle = "lg:text-[1.2vw] ";
+  const introCardRef = useRef(null);
+
+  const toggleExpansion = () =>{
+    if(!textExpanded){
+      setTextExpanded(true);
+    }else{
+      introCardRef.current?.scrollIntoView({ behavior: "instant", block: "start" });
+      setTextExpanded(false);
+    }
+  }
 
   const expandedContent = (
     <div className="mt-4 space-y-3 text-sm leading-normal font-light text-gray-700 md:text-xs md:font-extralight lg:text-[1.1vw]">
@@ -47,7 +57,7 @@ export default function IntroCard() {
   );
 
   return (
-    <div className="mt-25 mb-60 flex h-fit w-9/10 flex-col items-center overflow-hidden rounded-2xl shadow-2xl outline-2 outline-[#f9bc57] md:mt-5 md:mb-0 lg:w-fit lg:max-w-[70%]">
+    <div ref={introCardRef} className="mt-25 mb-50 flex h-fit w-9/10 flex-col items-center overflow-hidden rounded-2xl shadow-2xl outline-2 outline-[#f9bc57] md:mt-5 md:mb-0 lg:w-fit lg:max-w-[70%]">
       <div className="flex w-full flex-row items-center justify-start gap-4 bg-gradient-to-br from-red-200 to-[#f9bc57]">
         <div className="aspect-square w-[12vw] min-w-[110px] shrink-0 md:min-w-[150px]">
           <Image
@@ -68,11 +78,11 @@ export default function IntroCard() {
         <div className="mt-4 flex w-full flex-col items-center-safe">
           <hr className="h-1 w-3/5" />
           <svg
-            onClick={() => setTextExpanded((prev) => !prev)}
+            onClick={toggleExpansion}
             style={{
               transform: `rotate(${textExpanded ? 180 : 0}deg)`,
             }}
-            className="size-7 rounded-full outline-1 outline-gray-500 hover:outline-2"
+            className="size-7 mt-2 rounded-full outline-1 outline-gray-500 hover:outline-2"
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
