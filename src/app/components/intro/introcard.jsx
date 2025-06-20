@@ -82,7 +82,7 @@ export default function IntroCard() {
             style={{
               transform: `rotate(${textExpanded ? 180 : 0}deg)`,
             }}
-            className="size-7 mt-2 rounded-full outline-1 outline-gray-500 hover:outline-2"
+            className="size-7 mt-2 rounded-full overflow-hidden inline-block border-1 border-gray-500 hover:border-gray-900"
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"

@@ -27,7 +27,7 @@ function Brief({ journey, expand, setExpand }) {
         className="flex h-full w-2/13 items-center justify-center rounded-r-xl border-l-1 border-gray-200/60 bg-gray-50/80 hover:shadow-lg md:w-1/13"
       >
         <svg
-          className="size-5 -rotate-90 rounded-full border-1 border-gray-200 bg-violet-100 md:size-7"
+          className="size-5 -rotate-90 rounded-full overflow-hidden inline-block border-1 border-gray-200 bg-violet-100 md:size-7"
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
           viewBox="0 0 24 24"
