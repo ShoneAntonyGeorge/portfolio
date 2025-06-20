@@ -70,29 +70,18 @@ export default function Home(){
 
     //locking scroll
     const origninalPositon = document.body.style.position;
-    const origninalTop = document.body.style.top;
-    
+    const origninalTop = document.body.style.top; 
     const elementTop = journeyPageRef.current?.getBoundingClientRect().top + window.scrollY;
 
-    const fixToJourney = () => {
-      // console.log("triggering")
-      
-      const elementTop = journeyPageRef.current?.getBoundingClientRect().top + window.scrollY;
-      console.log(elementTop,window.scrollY)
-      document.body.style.position = 'fixed';
-      if(elementTop !== 0){
+    document.body.style.position = 'fixed';
+    if(elementTop !== 0){
       document.body.style.top = `-${elementTop}px`;
-      }
     }
-    fixToJourney();
-    // window.addEventListener('resize',fixToJourney);
 
     return () => {
-      console.log("exiting")
       document.body.style.position = origninalPositon;
       document.body.style.top = origninalTop;
       window.scrollTo(0, elementTop);
-      // window.removeEventListener('resize',fixToJourney);
     };
   }, [expand,isMobileView]);
 

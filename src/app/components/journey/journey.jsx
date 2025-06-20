@@ -1,4 +1,3 @@
-"use client";
 import React from "react";
 import Brief from "./brief";
 import journeyData from "../../data/journeyData";
@@ -7,7 +6,7 @@ import journeyData from "../../data/journeyData";
 function Journey({ expand, setExpand,journeyPageRef }) {
 
   return (
-    <div ref={journeyPageRef} className="relative flex w-screen min-h-screen flex-col items-center justify-center bg-[url(/abstract.png)] bg-cover bg-center">
+    <div ref={journeyPageRef} className="relative flex min-h-screen w-screen flex-col items-center justify-center bg-[url(/abstract.png)] bg-cover bg-center">
       {journeyData.map((journey) => (
         <Brief
           key={journey.title}

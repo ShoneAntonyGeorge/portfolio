@@ -3,21 +3,19 @@ import React, {useEffect,useState} from "react";
 
 function Expanded({ setExpand, journey }) {
 
-    const [maxHeight,setMaxHeight] = useState('100vw');
-    const [random,setRandom] = useState(1); 
+  const [maxHeight,setMaxHeight] = useState('100vh');
   
-    useEffect(() => {
-      const resize = () => {
-        console.log("resizing")
-        setRandom(Math.random())
-        setMaxHeight((window.innerHeight)+"px");
-      }
-      resize();
-      window.addEventListener('resize',resize);
-  
-      return () => window.removeEventListener('resize',resize);
-  
-    },[])
+  useEffect(() => {
+    const resize = () => {
+      setMaxHeight((window.innerHeight)+"px");
+    }
+    resize();
+    window.addEventListener('resize',resize);
+
+    return () => window.removeEventListener('resize',resize);
+
+  },[])
+
   return (
     <div style={{height:maxHeight}} className="expandSlideClass fixed top-0 z-1000 flex w-screen items-center justify-center">
       <div  className="relative z-10 max-h-95 flex min-h-7/8 w-95/100 flex-col overflow-hidden rounded-3xl border-3 border-[#5a045d] bg-white shadow-lg lg:h-6/7 lg:w-4/5 lg:flex-row">
@@ -49,7 +47,7 @@ function Expanded({ setExpand, journey }) {
 
         <div className="flex h-full flex-1 w-full flex-col overflow-y-auto rounded-r-3xl p-5 lg:w-7/10 lg:p-15">
           <span className="font-serif text-black text-sm font-light italic lg:text-base/6">
-            "{journey.description}"{random} -- {maxHeight}
+            "{journey.description}"
           </span>
 
           <ul className="flex list-disc flex-col gap-4 p-4 my-8">
