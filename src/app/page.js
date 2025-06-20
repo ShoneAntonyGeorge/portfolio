@@ -115,11 +115,12 @@ export default function Home(){
     const dy = end.y - swipeStart.current.y;
 
     const movement = Math.abs(dx) > Math.abs(dy) ? dx : dy;
+    const movementThreshold = 30;
 
-    if (movement > 30 && pageRef.current > 0){ 
+    if (movement > movementThreshold && pageRef.current > 0){ 
       updatePage(pageRef.current -1 )
     }
-    else if (movement < -30 && pageRef.current < numOfPages-1){ 
+    else if (movement < (movementThreshold * -1) && pageRef.current < numOfPages-1){ 
       updatePage(pageRef.current + 1 )
     }
 
