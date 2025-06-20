@@ -92,9 +92,52 @@ export default function Home(){
     }
   },[isMobileView])
 
+  const start = useRef({ x: 0, y: 0 });
+
+  const handleTouchStart = (e) => {
+    if(expand) return;
+
+    start.current = {
+      x: e.touches[0].clientX,
+      y: e.touches[0].clientY,
+    };
+  };
+
+  const handleTouchEnd = (e) => {
+    if(expand) return;
+
+    const end = {
+      x: e.changedTouches[0].clientX,
+      y: e.changedTouches[0].clientY,
+    };
+
+    const dx = end.x - start.current.x;
+    const dy = end.y - start.current.y;
+
+    if (Math.abs(dx) > Math.abs(dy)) {
+      if (dx > 30){ 
+        console.log("Swipe right");
+        if(pageRef.current > 0) updatePage(pageRef.current -1 )
+      }
+      else if (dx < -30){ 
+        console.log("Swipe left");
+        if(pageRef.current < numOfPages-1) updatePage(pageRef.current + 1 )
+      }
+    } else {
+      if (dy > 30){ 
+        console.log("Swipe down");
+        if(pageRef.current > 0) updatePage(pageRef.current -1 )
+      }
+      else if (dy < -30){ 
+        console.log("Swipe up")
+        if(pageRef.current < numOfPages-1) updatePage(pageRef.current + 1 )
+      };
+    }
+  };
+
 
   return (
-    <div className="overflow-hidden w-screen md:h-screen">
+    <div className="overflow-hidden w-screen md:h-screen" onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd}>
       {!expand && <FloatingMenu {...{page,updatePage}} className="z-2"/>}
       {domLoaded && <div 
         className="flex md:flex-row flex-col md:transition-transform md:duration-700 min-h-screen md:ease-in-out"
