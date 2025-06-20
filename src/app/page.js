@@ -10,6 +10,7 @@ export default function Home(){
 
   const pageRef = useRef(0);
   const [page,setPage] = useState(pageRef.current);
+  const journeyPageRef = useRef(null);
 
   const updatePage = (page) => {
     pageRef.current = page;
@@ -68,16 +69,19 @@ export default function Home(){
     if (!(expand && isMobileView)) return;
 
     //locking scroll
-    const scrollY = window.scrollY;
     const origninalPositon = document.body.style.position;
-    const origninalTop = document.body.style.top;
+    const origninalTop = document.body.style.top; 
+    const elementTop = journeyPageRef.current?.getBoundingClientRect().top + window.scrollY;
+
     document.body.style.position = 'fixed';
-    document.body.style.top = `-${scrollY}px`;
+    if(elementTop !== 0){
+      document.body.style.top = `-${elementTop}px`;
+    }
 
     return () => {
       document.body.style.position = origninalPositon;
       document.body.style.top = origninalTop;
-      window.scrollTo(0, scrollY);
+      window.scrollTo(0, elementTop);
     };
   }, [expand,isMobileView]);
 
@@ -103,7 +107,7 @@ export default function Home(){
         {pageDatas.map((PageData,index) => 
           {
             const Page = PageData[1];
-            return  <Page key={index} page={page} expand={expand} setExpand={setExpand}/>
+            return  <Page key={index} page={page} expand={expand} setExpand={setExpand} journeyPageRef={journeyPageRef}/>
           }
         )}
 
