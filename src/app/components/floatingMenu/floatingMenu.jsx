@@ -12,8 +12,8 @@ export default function FloatingMenu({ page, updatePage }) {
           return (
             <button
               className={
-                (page === index ? "border-b-5 border-[#f9bc57]" : "") +
-                " w-[100px] text-xs text-white lg:text-base"
+                (page === index ? "border-[#f9bc57]" : "border-transparent") +
+                " w-[100px] border-b-5 text-xs text-white lg:text-base"
               }
               key={index}
               onClick={() => updatePage(index)}

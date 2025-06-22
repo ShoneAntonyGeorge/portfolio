@@ -28,12 +28,12 @@ export default function IntroCard() {
         design styles for different pages.
       </p>
       <p>
-        The site is fully responsive, so feel free to resize your browser or
+        The site is fully responsive, so feel free to
         view it on your mobile, tablet, or desktop — whatever works best for you.
       </p>
       <p>
-        I believe in sharing knowledge, so the code repository is open and
-        available on my GitHub profile. I'll also be posting insights,
+        I built this using React.js, Next.js, and Tailwind CSS. 
+        The code is open-source and available on my GitHub profile. I'll be posting insights,
         breakdowns, and the journey behind this project on LinkedIn — be sure to
         connect with me there!
       </p>
