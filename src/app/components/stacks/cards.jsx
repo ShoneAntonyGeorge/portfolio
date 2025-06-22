@@ -154,7 +154,7 @@ function Cards({ windowRef }) {
       <div
         className={`relative flex w-screen flex-col items-center ${labelsVisible ? "top-10" : "top-30"}`}
       >
-        <span className="mb-5 text-2xl">
+        <span className="mb-5 text-2xl text-black">
           {labelsVisible && "STRONG EXPERIENCE IN"}{" "}
         </span>
         <div className="relative flex w-screen flex-wrap justify-center gap-10">
@@ -173,7 +173,7 @@ function Cards({ windowRef }) {
           ))}
         </div>
 
-        <span className="relative top-10 mb-5 text-xl">
+        <span className="relative top-10 mb-5 text-xl text-black">
           {labelsVisible && "WORKING KNOWLEDGE OF"}{" "}
         </span>
         <div className="relative top-10 mb-30 flex w-screen flex-wrap justify-center gap-10">
@@ -219,7 +219,7 @@ function Cards({ windowRef }) {
               d="M15.91 11.672a.375.375 0 0 1 0 .656l-5.603 3.113a.375.375 0 0 1-.557-.328V8.887c0-.286.307-.466.557-.327l5.603 3.112Z"
             />
           </svg>
-          <span className="text-xs">Replay</span>
+          <span className="text-xs text-black">Replay</span>
         </button>
       )}
     </div>
