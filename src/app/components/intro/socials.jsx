@@ -6,8 +6,8 @@ export default function Socials() {
 
   const iconData = [
     {
-      name: "instagram",
-      href: "https://www.instagram.com/shoneantonygeorge/",
+      name: "email",
+      href: "mailto:shoneantonygeorge@gmail.com",
     },
     {
       name: "linkedin",
