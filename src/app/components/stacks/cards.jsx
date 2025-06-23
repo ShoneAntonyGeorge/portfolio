@@ -13,6 +13,7 @@ function Cards({ windowRef }) {
     "Bootstrap",
     "NextJs",
     "Tailwind CSS",
+    "Redis",
   ];
   const strongStacks = [
     "React",
